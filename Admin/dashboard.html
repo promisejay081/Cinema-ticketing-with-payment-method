@@ -150,14 +150,20 @@
         <div class="col-md-4">
             <div class="card p-3 bg-dark">
               <h4 class="text-light">Total number of Staffs</h4><br>
-              <i class="fa fa-users fa-1x m-4 p-3"></i>
+              <div style=" display: flex;">
+                <p id="show" style="font-size: 5em;"></p>
+                <i class="fa fa-users fa-1x m-4 p-3"></i>
+              </div>
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="card p-3 bg-secondary">
               <h4 class="text-light">Total number of Customers</h4><br>
-              <i class="fa fa-users fa-1x m-4 p-3"></i>
+              <div style=" display: flex;">
+                <p id="sho" style="font-size: 5em;"></p>
+                <i class="fa fa-users fa-1x m-4 p-3"></i>
+              </div>
             </div>
         </div>
 
@@ -244,6 +250,29 @@
     <script src="js/main.js"></script>
 
     <script>
+    // var b = '';
+    // var people;
+    if (window.localStorage.lTUser) 
+    {
+        jUser = window.localStorage.getItem("lTUser");
+        staffs = JSON.parse(jUser);
+        for(i=0; i<staffs.length; i++)
+        {
+            b = i+1
+        } 
+        show.innerHTML = b; 
+    }
+
+    if (window.localStorage.registeredUsers) 
+    {
+        jUser = window.localStorage.getItem("registeredUsers");
+        customers = JSON.parse(jUser);
+        for(i=0; i<customers.length; i++)
+        {
+            c = i+1
+        } 
+        sho.innerHTML = c; 
+    }
     const $button  = document.querySelector('#sidebar-toggle');
   const $wrapper = document.querySelector('#wrapper');
 

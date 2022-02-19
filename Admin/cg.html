@@ -11,6 +11,15 @@
 </body>
 </html>
 <script>
+    var chairs =window.localStorage.getItem("chair");
+    set=JSON.parse(chairs);
+    // alert(set.ca)
+    for(let i=0; i<set.length; i++){
+       alert(set);
+    }
+
+
+
 	 // chair = '<tr>'
   //           for (let x = 0; x < noOfChair; x++) {
   //               chair += '<td><img src="../images/21.jfif" alt="" width="200" height="250"></td>';
@@ -23,27 +32,28 @@
   //           chair += '</tr>';
   //           document.getElementById("hall").innerHTML = chair;
 
-            var b = '';
-            var cArranged;
-            incre=()=>
-            {
-               if (l.innerHTML < 1) 
-               {
-                chairs++
-               }
-            }
+            // var b = '';
+            // var cArranged;
+            // incre=()=>
+            // {
+            //    if (l.innerHTML < 1) 
+            //    {
+            //     chairs++
+            //    }
+            // }
     
-    if (window.localStorage.sett) 
-    {
-        jUser = window.localStorage.getItem("sett");
-        chairs = JSON.parse(jUser);
-        for(i=0; i<chairs.length; i++)
-        {
-        	// alert() 	;
-        	b += '<td><img src="../images/21.jfif" alt="" width="200" height="250"></td>';
-        	cArranged++;
-            // b += "<tr id='index'><td>"+i+"</td><td>"+sett[i].Firstname+"</td><tr>"
-        } 
-        l.innerHTML = b; 
-    }
+    // if (window.localStorage.sett) 
+    // {
+    //     jUser = window.localStorage.getItem("sett");
+    //     chairs = JSON.parse(jUser);
+    //     for(i=0; i<chairs.length; i++)
+    //     {
+    //     	// alert() 	;
+    //     	b += '<td><img src="../images/21.jfif" alt="" width="200" height="250"></td>';
+    //     	cArranged++;
+    //         // b += "<tr id='index'><td>"+i+"</td><td>"+sett[i].Firstname+"</td><tr>"
+    //     } 
+    //     l.innerHTML = b; 
+    // }
+    // let char = 
 </script>

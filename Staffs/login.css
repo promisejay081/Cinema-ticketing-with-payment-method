@@ -8,7 +8,7 @@
 }
 .card
 {
-	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/2.png);
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/6.jpg);
     background-size: cover;
     background-position: 50% center 50%;
 	box-shadow: 2px 2px 4px 2px #474343, -2px 2px 4px 2px #fff;

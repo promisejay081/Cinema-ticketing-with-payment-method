@@ -129,40 +129,86 @@
     </div>
 
   <section id="content-wrapper">
-      <div class="container my-2">
-                      <div class="card p-2">
-                        <h3 class="p-3 card-header bg-dark text-light">Staff Details <i class="fa fa-users fa-2x" style="float: right;"></i></h3>
-                        <div class="card-body">
-                          <table class="table-striped text-dark table p-4" style="overflow-x:auto;">
-                          <!-- <thead> -->
-                            <tr>
-                              <th>S/N</th>
-                              <th>Firstname</th>
-                              <th>Lastname</th>
-                              <th>Phone Number</th>
-                              <th>Address</th>
-                              <th>Email</th>
-                              <th>Delete</th>
-                              <th>Edit</th>
-                            </tr>
-                            <div style="display: flex;">
-                                <input type="text" name="" placeholder="Search Staff" class="form-control" style="border-radius: 50px">
-                                <br>
-                                <button class="btn btn-primary">Search <i class="fa fa-search"></i></button>
-                                <br>
-                            </div>
-                            <br>
-                           
-                            <!-- </thead> -->
+    <div class="container my-2">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content p-2">
+            <div class="modal-header bg-success">
+              <h5 class="modal-title text-light" id="exampleModalLongTitle">Edit Staff Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
 
-                            <tbody id="l">
-                                
-                            </tbody>
-                          </table>
-                        </div>
+              <div class="modal-body">
+                <div class="mb-1">
+                  <div class="row p-3">
+                    <div class="col-lg-6">
+                      <div class="form-group mb-5">
+                        <input type="text" name="" placeholder="Firstname" class="form-control" id="fname">
+                      </div>
+
+                      <div class="form-group mb-5">
+                        <input type="number" name="" placeholder="Phone Number" class="form-control "  id="num">
                       </div>
                     </div>
-              
+
+                    <div class="col-lg-6">
+                      <div class="form-group mb-5">
+                        <input type="text" name="" placeholder="Lastname" class="form-control"  id="lname">
+                      </div>
+
+                      <div class="form-group">
+                        <input type="text" name="" placeholder="Address" class="form-control"  id="loc">
+                      </div>
+
+                      </div>
+
+                      <div class="form-group mb-5 col-12">
+                        <input type="email" name="" placeholder="Email" class="form-control"  id="email">
+                      </div>
+                    </div>
+                    </div>
+                    
+                    <div class="modal-footer bg-success">
+                      <button class="btn btn-primary wow lightSpeed"  onclick="reg()">Save</button>
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>  
+                    </div>
+                  </div>
+                  </div>
+                </div>
+            </div>
+            
+            <div class="card p-2">
+              <h3 class="p-3 card-header bg-dark text-light">Staff Details <i class="fa fa-users fa-2x" style="float: right;"></i></h3>
+                <div class="card-body">
+                  <table class="table-striped text-dark table p-4" style="overflow-x:auto;">
+                          <!-- <thead> -->
+                  <tr>
+                  <th>S/N</th>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th>Phone Number</th>
+                  <th>Address</th>
+                  <th>Email</th>
+                  <th>Delete</th>
+                  <th>Edit</th>
+                  </tr>
+
+                  <div style="display: flex;">
+                    <input type="text" name="" placeholder="Search Staff" class="form-control" style="border-radius: 50px">
+                    <br>
+                    <button class="btn btn-primary">Search <i class="fa fa-search"></i></button>
+                    <br>
+                  </div>
+                    <br>
+                     <!-- </thead> -->
+
+                    <tbody id="l"></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
     </body>
 </html>
 
@@ -209,7 +255,7 @@
             +staffs[i].Address+"</td><td>"
             +staffs[i].email+"</td><td>"
             +'<button class="bg-danger text-light fa fa-trash p-3" onclick="remove('+i+')"></button>'+"</td><td>"
-            +'<button class="bg-success text-light fa fa-pencil-square-o p-3" onclick="edit('+i+')"></button>'+"</td><tr>"
+            +'<button  class="bg-success text-light fa fa-pencil-square-o p-3" onclick="edit('+i+')" data-toggle="modal" data-target="#exampleModalCenter"></button>'+"</td><tr>"
         } 
         l.innerHTML = b; 
     }
@@ -225,11 +271,39 @@
 
      edit=(e)=>
     {
-        userList = JSON.parse(window.localStorage.getItem("lTUser")).alluser;
-        editableUser = userList[e];
-        alert(e);
-        
+      for(let i=0; i<staffs.length; i++)
+      {
+      if(e == i)
+      {
+      fname.value = staffs[i].Firstname;
+      lname.value = staffs[i].Lastname;
+      num.value  =  staffs[i].Phone;
+      loc.value  =  staffs[i].Address;
+      email.value = staffs[i].email;
       }
+    }
+  }
+
+  reg=()=>
+  {
+    update = JSON.parse(window.localStorage.getItem("lTUser"));
+    for(let i=0; i<staffs.length; i++)
+    {
+      if (fname.value == staffs[i].Firstname) 
+      {
+        staffs.splice(i, 1,{
+            "Firstname":fname.value,
+            "Lastname":lname.value,
+            "Phone":num.value,
+            "Address": loc.value,
+            "email":email.value,
+          });
+        result = JSON.stringify(staffs);
+        window.localStorage.setItem("lTUser",result);
+        location.reload();
+      }
+    }
+  }
 </script>
 
 
@@ -253,4 +327,20 @@
 
 </script>
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

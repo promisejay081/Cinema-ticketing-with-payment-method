@@ -57,11 +57,11 @@
         </li>
 
         <li>
-          <a href="staffaccount.html"><i class="fa fa-user-plus"></i>Add Staffs</a>
+          <a href="staffaccount.html"><i class="fa fa-user-plus"></i>Add customers</a>
         </li>
 
          <li>
-          <a href="staffdetails.html"><i class="fa fa-info-circle"></i>Preview Staffs</a>
+          <a href="staffdetails.html"><i class="fa fa-info-circle"></i>Preview customers</a>
         </li>
 
         <li class="active">
@@ -130,6 +130,76 @@
 
   <section id="content-wrapper">
       <div class="container my-2">
+         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content p-2">
+            <div class="modal-header bg-success">
+              <h5 class="modal-title text-light" id="exampleModalLongTitle">Edit Staff Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+
+              <div class="modal-body">
+                <div class="mb-1">
+                  <div  class="row">
+                       <div class="col-lg-4 my-5 first"></div>
+
+                       <div class="col-lg-8 p-5">
+                        <h4 class="card-header bg-secondary text-light p-3">Create Account
+                            <i class="fa fa-user fa-2x" style="float: right;"></i>
+                        </h4>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="my-3 form-group">
+                                    <input type="text" name="" class="form-control" placeholder="Firstname" id="firstname">
+                                </div>
+                            </div>
+                            
+
+                            <div class="col-lg-6">
+                                <div class="my-3 form-group">
+                                    <input type="text" name="" class="form-control" placeholder="Lastname" id="lastname">
+                                </div>
+                            </div>
+                            
+                        </div>
+
+
+                        <div>
+                            <div class="my-3 form-group">
+                                <input type="email" name="" id="email" class="form-control" placeholder="Enter Email" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">  
+                                <div class="my-3 form-group">        
+                                    <input type="text" name="" id="uname" class="form-control" placeholder="Username">
+                                </div>       
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="my-3 form-group">
+                                 <input type="password" id="password" name="" class="form-control" placeholder="Enter Password">
+                                </div>
+                            </div>
+                            <button class="btn btn-success mt-4" onclick="register()">Register
+                                <i class="fa fa-arrow-right ml-2"></i> </button>
+                        </div>
+                        </div>
+                       </div>
+                    </div>
+                    
+                    <div class="modal-footer bg-success">
+                      <button class="btn btn-primary wow lightSpeed"  onclick="reg()">Save</button>
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>  
+                    </div>
+                  </div>
+                  </div>
+                </div>
+            </div>
                       <div class="card p-2">
                         <h3 class="p-3 card-header bg-dark text-light">Customers Details <i class="fa fa-users fa-2x" style="float: right;"></i></h3>
                         <div class="card-body">
@@ -202,14 +272,14 @@
         customers = JSON.parse(jUser);
         for(i=0; i<customers.length; i++)
         {
-            b += "<tr id='index'><td>"+i+"</td><td>"
+            b += "<tr id='index'><td>"+`${i+1}`+"</td><td>"
             +customers[i].firstname+"</td><td>"
             +customers[i].lastname+"</td><td>"
             +customers[i].email+"</td><td>"
             +customers[i].uname+"</td><td>"
             +customers[i].password+"</td><td>"
             +'<button class="bg-success text-light fa fa-pencil-square-o p-3 onclick="edit('+i+')"></button>'+"</td><td>"
-            +'<button class="bg-danger text-light fa fa-trash p-3" onclick="remove('+i+')"></button>'+"</td><tr>"
+            +'<button class="bg-danger text-light fa fa-trash p-3" onclick="remove('+i+')" ></button>'+"</td><tr>"
             
         } 
         l.innerHTML = b;
@@ -222,19 +292,44 @@
           window.localStorage.setItem("registeredUsers", JSON.stringify(userList));
         }
         location.reload();
-    }
-
-    edit=()=>
+}
+    edit=(e)=>
     {
-      let selectedRow = null;
-      userList = JSON.parse(window.localStorage.getItem("registeredUsers"));
-      editableUser = userList[e];
-      alert(editableUser);
-      // selectedRow = td.parentElement.parentElement;
-      // document.getElementById("firstname").innerHTML = selectedRow.cell[i].innerHTML;
-      //  window.localStorage.setItem("registeredUsers", JSON.stringify(userList));
-        // location.reload();
+      alert("dkfkdf")
+    //   for(let i=0; i<customers.length; i++)
+    //   {
+    //   if(e == i)
+    //   {
+    //   // userList = JSON.parse(window.localStorage.getItem("registeredUsers"));
+      
+    //   // editableUser = userList[e];
+    //   firstname.value = customers[i].firstname;
+    //   lastname.value = customers[i].lastname;
+    //   uname.value = customers[i].uname;
+    //   email.value = customers[i].email;
+    //   }
+    // }
+  }
+
+  reg=()=>
+  {
+    update = JSON.parse(window.localStorage.getItem("registeredUsers"));
+    for(let i=0; i<customers.length; i++)
+    {
+      if (firstname.value == customers[i].firstName) 
+      {
+        customers.splice(i, 1,{
+          "firstname": firstName,
+            "lastname": lastName,
+            "email": emailAddress,
+            "uname": userName,
+          });
+        result = JSON.stringify(customers);
+        window.localStorage.setItem("registeredUsers",result);
+        location.reload();
+      }
     }
+  }
 </script>
 
 
