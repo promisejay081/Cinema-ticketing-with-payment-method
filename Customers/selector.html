@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Book Seat</title>
+    <title>Home</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -28,9 +28,6 @@
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
     <link rel="stylesheet" type="text/css" href="wowjs/css/libs/animate.css">
-    <link rel="stylesheet" type="text/css" href="book.css">
-
-
 
 
     <!-- Main CSS-->
@@ -42,21 +39,74 @@
         new WOW().init();
     </script>
 
+    <style>
+        body
+         {
+          padding-bottom: 30px;
+          position: relative;
+          min-height: 100%;
+          margin: var(--header-height) 0 0 0;
+          background-color: var(--body-color);
+          color: var(--text-color);
+          font-family: candara;
+        }
+        .card
+        {
+          box-shadow: 1px 2px 3px 2px;
+          top: 2em;
+          position: relative;
+          background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/49.jfif);
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .card img
+        {
+            height: 25vh;
+        }
+
+        h3
+        {
+            color: white;
+        }
+    </style>
+
 </head>
-    <body>
-        <div class="container">
-            <div class="card my-3">
-                <input type="text" name="" id="f1" class="form-control" onkeyup="sum()">
-                <input type="text" name="" id="f2" class="form-control">
-                <button class="btn btn-success"> Make a Book</button>
-            </div>
+<body>
+    <div class="container">
+        <div class="card w-50 m-auto my-4">
+            <h3 class="card-header">Select your Pacakge Chair</h3>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3 class="my-5 p-5">REGULAR</h3>
+                        </div>
+
+                        <div class="col-md-6">
+                            <img src="../images/44.png">
+                            <br>
+                            <a href="hall.html">
+                                <button class="btn btn-info">Select</button>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="my-5 p-5">VIP</h3>
+                        </div>
+
+                        <div class="col-md-6">
+                            <img src="../images/60.png">
+                            <br>
+                            <a href="shall.html">
+                                <button class="btn btn-dark">Select</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <div class="card-footer text-muted text-center">@FEMZY B Cinema</div>
         </div>
-    </body>
+    </div>
+</body>
 </html>
-
-
-
-    <!-- Jquery JS-->
 
     <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
@@ -79,15 +129,4 @@
     </script>
 
     <!-- Main JS-->
-    <!-- <script src="js/main.js"></script> -->
-
-    <script>
-        sum=()=>{
-        let valu1 =f1.value;
-         f2.value = valu1 * 1000;
-        
-        
-    }
-        // fl.
-    </script>
-    
+    <script src="js/main.js"></script>

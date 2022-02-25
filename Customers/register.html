@@ -151,11 +151,11 @@
          let pwd = password.value;
 
         finalResult = {
-            "firstname": firstName,
-            "lastname": lastName,
-            "email": emailAddress,
-            "uname": userName,
-            "password": pwd
+              "firstname": firstname.value,
+            "lastname": lastname.value,
+            "email": email.value,
+            "uname": uname.value,
+            "password": password.value
         }
 
         if(localStorage.getItem("registeredUsers"))

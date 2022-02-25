@@ -8,7 +8,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>customer Details</title>
+    <title>Staff Details</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -41,107 +41,64 @@
         <script>
         new WOW().init();
       </script>
-      <style>
-        .card
-        {
-          box-shadow: 1px 2px 3px 2px;
-        }
-
-        .search
-        {
-          width: 20%;
-          border: none;
-          border-bottom: 1px solid black;
-          background: none;
-          color: black;
-          outline: none;
-          padding: 8px;
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: 0;
-        }
-
-        .search:hover
-        {
-          width: 100%;
-          transition: 1s ease;
-          outline: none;
-          background: transparent;
-        }
-
-        .form-control:focus
-        {
-          box-shadow: none;
-        }
-      </style>
 
 </head>
     <body>
       <div id="wrapper">
- <aside id="sidebar-wrapper">
-    <div class="sidebar-brand">
-      <img src="../images/sk.png" class="my-1" align="center">
-    </div>
 
-    <ul class="sidebar-nav">
-      <li>
-        <a href="dashboard.html"><i class="fa fa-tachometer-alt"></i>Dashboard</a>
-      </li>
+    <aside id="sidebar-wrapper">
+      <div class="sidebar-brand">
+        <img src="../images/sk.png" class="my-1" align="center">
+      </div>
 
-      <li>
-        <a href="staffaccount.html"><i class="fa fa-user-plus"></i>Add Staffs</a>
-      </li>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="dashboard.html"><i class="fa fa-tachometer-alt"></i>Dashboard</a>
+        </li>
 
-       <li>
-        <a href="staffdetails.html"><i class="fa fa-info-circle"></i>Staffs Details</a>
-      </li>
+        <li>
+          <a href="staffaccount.html"><i class="fa fa-user-plus"></i>Add customers</a>
+        </li>
 
-      <li class="active">
-        <a href="customerdetails.html"><i class="fa fa-users"></i>Customers Details</a>
-      </li>
+         <li>
+          <a href="staffdetails.html"><i class="fa fa-info-circle"></i>Preview customers</a>
+        </li>
 
-      <li>
-        <a href="show.html"><i class="fa fa-sort"></i>Arrange Chairs</a>
-      </li>
+        <li class="active">
+          <a href="customerdetails.html"><i class="fa fa-users"></i>Customers</a>
+        </li>
 
-      <li>
-        <a href="hall.html"><i class="fa fa-home"></i>Check Hall</a>
-      </li>
+        <li>
+          <a href="show.html"><i class="fa fa-sort"></i>Arrange Chairs</a>
+        </li>
 
-       <li>
-        <a href="show.html"><i class="fa fa-sort"></i>Chairs book per-day</a>
-      </li>
+        <li>
+          <a href="#"><i class="fa fa-user"></i>Profile</a>
+        </li>
+         <li>
+          <a href="logout.php"><i class="fa fa-power-off"></i>Logout</a>
+        </li>
+      </ul>
 
-       <li>
-        <a href="show.html"><i class="fa fa-sort"></i>Payment per Day</a>
-      </li>
+      <ul class="social p-2 m-3">
+        <li class="list-group">
+          <i class="fab fa-facebook p-1" style="background-color: blue; color: white; width: 30px"></i>
+        </li>
 
-      <li>
-        <a href="#"><i class="fa fa-user"></i>Profile</a>
-      </li>
-       <li>
-        <a href="logout.php"><i class="fa fa-power-off"></i>Logout</a>
-      </li>
-    </ul>
+        <li class="list-group">
+          <i class="fab fa-twitter p-1" style="color: #4EC5EF; width: 30px"></i>
+        </li>
 
-    <ul class="social p-2 m-3">
-      <li class="list-group">
-        <i class="fab fa-facebook p-1" style="background-color: blue; color: white; width: 30px"></i>
-      </li>
+        <li class="list-group">
+          <i class="fab fa-whatsapp p-1" style="background-color: green; color: white; width: 30px"></i>
+        </li>
 
-      <li class="list-group">
-        <i class="fab fa-twitter p-1" style="color: #4EC5EF; width: 30px"></i>
-      </li>
+        <li class="list-group p-1" style="width: 30px; color: #4EC5EF">
+          <i class="fab fa-instagram"></i>
+        </li>
 
-      <li class="list-group">
-        <i class="fab fa-whatsapp p-1" style="background-color: green; color: white; width: 30px"></i>
-      </li>
-
-      <li class="list-group p-1" style="width: 30px; color: #4EC5EF">
-        <i class="fab fa-instagram"></i>
-      </li>
-
-    </ul>
-  </aside>
+      </ul>
+    </aside>
 
     <div id="navbar-wrapper">
       <nav class="navbar navbar-inverse">
@@ -177,7 +134,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content p-2">
             <div class="modal-header bg-success">
-              <h5 class="modal-title text-light" id="exampleModalLongTitle">Edit customer Details</h5>
+              <h5 class="modal-title text-light" id="exampleModalLongTitle">Edit Staff Details</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                   </button>
@@ -186,55 +143,67 @@
               <div class="modal-body">
                 <div class="mb-1">
                   <div  class="row">
+                       <div class="col-lg-4 my-5 first"></div>
 
-                        <!-- <h4 class="card-header bg-secondary text-light p-3">Create Account
+                       <div class="col-lg-8 p-5">
+                        <h4 class="card-header bg-secondary text-light p-3">Create Account
                             <i class="fa fa-user fa-2x" style="float: right;"></i>
                         </h4>
-                        <br> -->
-                       <div class="col-lg-6">
-                        <!-- <div class="row"> -->
-                            <!-- <div class="col-lg-6"> -->
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-6">
                                 <div class="my-3 form-group">
                                     <input type="text" name="" class="form-control" placeholder="Firstname" id="firstname">
-                                  </div>
-
-                                    <div class="my-3 form-group">
-                                      <input type="email" name="" id="email" class="form-control" placeholder="Enter Email" required>
-                                  </div>
                                 </div>
-                            <!-- </div> -->
+                            </div>
                             
 
                             <div class="col-lg-6">
                                 <div class="my-3 form-group">
                                     <input type="text" name="" class="form-control" placeholder="Lastname" id="lastname">
                                 </div>
+                            </div>
+                            
+                        </div>
 
+
+                        <div>
+                            <div class="my-3 form-group">
+                                <input type="email" name="" id="email" class="form-control" placeholder="Enter Email" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">  
                                 <div class="my-3 form-group">        
                                     <input type="text" name="" id="uname" class="form-control" placeholder="Username">
-                                </div>
+                                </div>       
+                            </div>
 
-                                 <div class="my-3 form-group">        
-                                    <input type="text" name="" id="password" class="form-control" placeholder="Password">
+                            <div class="col-lg-6">
+                                <div class="my-3 form-group">
+                                 <input type="password" id="password" name="" class="form-control" placeholder="Enter Password">
                                 </div>
-
-                            <button class="btn btn-primary wow lightSpeed"  onclick="reg()">Save</button>
-                         </div>
+                            </div>
+                            <button class="btn btn-success mt-4" onclick="register()">Register
+                                <i class="fa fa-arrow-right ml-2"></i> </button>
+                        </div>
+                        </div>
                        </div>
                     </div>
                     
                     <div class="modal-footer bg-success">
+                      <button class="btn btn-primary wow lightSpeed"  onclick="reg()">Save</button>
                       <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>  
                     </div>
                   </div>
                   </div>
                 </div>
             </div>
-                      <div class="card">
-                        <h3 class="card-header border-5 text-dark">Customers Details <i class="fa fa-users fa-2x" style="float: right;"></i></h3>
+                      <div class="card p-2">
+                        <h3 class="p-3 card-header bg-dark text-light">Customers Details <i class="fa fa-users fa-2x" style="float: right;"></i></h3>
                         <div class="card-body">
-                          <center>
-                            <table class="table table-responsive table-hover table-dark table-striped" style="width: fit-content;">
+                          <table class="table-striped text-dark table p-4">
                           <!-- <thead> -->
                             <tr>
                               <th>S/N</th>
@@ -242,15 +211,15 @@
                               <th>Lastame</th>
                               <th>Email</th>
                               <th>Username</th>
-                              <th>Password</th>
+                              <th>Passowrd</th>
                               <th>Edit</th>
                               <th>Delete</th>
                             </tr>
                             <div style="display: flex;">
-                                <input type="text" name="" placeholder="Search Customers" class="form-control search"><i class="fa fa-search"></i>
+                                <input type="text" name="" placeholder="Search Customers" class="form-control" style="border-radius: 50px">
                                 <br>
-                                <!-- <button class="btn btn-primary">Search <i class="fa fa-search"></i></button>
-                                <br> -->
+                                <button class="btn btn-primary">Search <i class="fa fa-search"></i></button>
+                                <br>
                             </div>
                             <br>
                            
@@ -260,11 +229,10 @@
                                 
                             </tbody>
                           </table>
-                          </center>
                         </div>
-                        <div class="card-footer text-muted text-center">@FEMZY B Cinema</div>
                       </div>
                     </div>
+              
     </body>
 </html>
 
@@ -310,19 +278,12 @@
             +customers[i].email+"</td><td>"
             +customers[i].uname+"</td><td>"
             +customers[i].password+"</td><td>"
-            // +'<button class="bg-success text-light fa fa-pencil-square-o p-3 onclick="edit('+i+')"></button>'+"</td><td>"
-            +'<button class="btn btn-success fa fa-pencil-square-o" onclick="ingo('+i+')" data-toggle="modal" data-target="#exampleModalCenter"></button>'
-            +"</td><td>"
+            +'<button class="bg-success text-light fa fa-pencil-square-o p-3 onclick="edit('+i+')"></button>'+"</td><td>"
             +'<button class="bg-danger text-light fa fa-trash p-3" onclick="remove('+i+')" ></button>'+"</td><tr>"
             
         } 
         l.innerHTML = b;
     }
-
-    // ingo=()=>
-    // {
-    //   alert('huiuviuy')
-    // }
     remove=(e)=>
     {
         userList = JSON.parse(window.localStorage.getItem("registeredUsers"));
@@ -333,8 +294,9 @@
         }
         location.reload();
 }
-    ingo=(k)=>
+    edit=(k)=>
     {
+      alert("dkfkdf")
       for(let i=0; i<customers.length; i++)
       {
       if(k == i)
@@ -343,7 +305,6 @@
       lastname.value = customers[i].lastname;
       uname.value = customers[i].uname;
       email.value = customers[i].email;
-      password.value = customers[i].password;
       }
     }
   }
@@ -353,31 +314,20 @@
     update = JSON.parse(window.localStorage.getItem("registeredUsers"));
     for(let i=0; i<customers.length; i++)
     {
-      if (firstname.value == customers[i].firstname) 
+      if (firstname.value == customers[i].firstName) 
       {
         customers.splice(i, 1,{
-            "firstname": firstname.value,
-            "lastname": lastname.value,
-            "email": email.value,
-            "uname": uname.value,
-            "password": password.value
+          "firstname": firstName,
+            "lastname": lastName,
+            "email": emailAddress,
+            "uname": userName,
           });
-        // alert("kndojn")
         result = JSON.stringify(customers);
         window.localStorage.setItem("registeredUsers",result);
         location.reload();
       }
     }
   }
-
-  $(document).ready(function(){
-    $(".search").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#l tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
 </script>
 
 

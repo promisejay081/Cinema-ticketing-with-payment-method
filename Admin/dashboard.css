@@ -10,9 +10,9 @@ body {
   position: relative;
   min-height: 100%;
   margin: var(--header-height) 0 0 0;
-  background-color: var(--body-color);
+  /*background-color: var(--body-color);*/
   color: var(--text-color);
-  font-family: dongle;
+  font-family: candara;
 
 }
 
@@ -39,9 +39,10 @@ a:focus {
   margin-left: -250px;
   overflow-y: auto;
   overflow-x: hidden;
-  background:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url(../images/4.jpg);
+  background:  linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/32.jpg);
   background-size: cover;
-    background-position: center;
+  background-position: center;
+  background-repeat: no-repeat;
   transition: all 0.5s ease;
   transition: 0.5s;
   overflow: hidden;
@@ -240,6 +241,7 @@ a:focus {
     width: 100%;
     position: absolute;
     z-index: 2;
+    background: whitesmoke;
 }
 #wrapper.toggled #navbar-wrapper {
     position: absolute;
@@ -270,6 +272,7 @@ a:focus {
   position: absolute;
   padding: 15px;
   top: 100px;
+     
 }
 #wrapper.toggled #content-wrapper {
   position: absolute;

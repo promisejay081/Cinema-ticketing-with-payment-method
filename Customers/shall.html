@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Home</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="wowjs/css/libs/animate.css">
+
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+    <script type="text/javascript" src="wowjs/wow.min.js"></script>
+
+
+    <script>
+        new WOW().init();
+    </script>
+
+    <style>
+        body
+        {
+            background: url(../images/52.jfif);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        .card
+        {
+            background: transparent;
+            border: none;
+        }
+        span
+        {
+            color: white;
+            margin: auto;
+            display: grid;
+            place-items: center;
+        }
+    </style>
+
+</head>
+<body onload="arranger()">
+    <div class="container">
+        <input type=""id="nc" name="" style="display:none;">
+        <input type="" id="npr" name="" style="display:none">
+        <div class="card w-50" style=" box-shadow: 1px 2px 3px 2px;margin: auto;">
+            <h3 class="card-header text-light">Selected Chairs Details</h3>
+            <div class="card-body">
+                <div class="row">  
+                    <div class="col-lg-6" style="align"> 
+                    <label>Sum total of the chair you want</label>   
+                        <input type="text" name="" placeholder="Total" class="form-control" id="p1">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <label>Search for no of chair you want</label>
+                        <input type="text" name="" placeholder="Search for chair" class="form-control search">
+                    </div>
+                </div>
+            <button class="btn btn-primary my-2">Proceed To Book Sit</button>
+            </div>
+        </div>
+        <br>
+        <table id="hall"></table>
+        
+    </div>
+ 
+
+</body>
+</html>
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+</body>
+</html>
+<script>
+  
+
+        arranger=()=> 
+        {
+          var char =JSON.parse(window.localStorage.getItem("chair")) ;
+          nc.value = char.fv
+          npr.value=char.sv
+
+
+           var chair ='';
+            noOfChair = nc.value;
+            noPerRow = npr.value;
+            cArranged = 0;
+
+            chair = '<tr>'
+            for (let x = 0; x < noOfChair; x++) {
+                chair += `<td><span>${x+1}</span><img src="../images/60.png" alt="" width="200" height="250" class="card" onclick="put()"></td>`;
+                cArranged++;
+                if (cArranged == noPerRow) {
+                    chair += '</tr><tr>';
+                    cArranged = 0;
+                }
+            }
+            chair += '</tr>';
+            document.getElementById("hall").innerHTML = chair;
+        }
+
+        put=(x)=>
+        {
+            var put = 3000; 
+            // let put = 
+            alert(x+1);
+            $(document).ready(function(){
+            $(".card").click(function(){
+               parseFloat(put + 1000);
+               p1.value = put;
+            });
+        });
+            // p1.value = parseFloat(put + 1000);
+     
+        }
+
+    $(document).ready(function(){
+    $(".search").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#hall span").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      // document.getElementById(".search").focus();      
+      $("img").fadeOut();
+
+       // $(".img").show();
+
+    });
+  });
+});
+</script>

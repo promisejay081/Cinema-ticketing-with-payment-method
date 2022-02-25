@@ -35,6 +35,8 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+    <link href="bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <script type="text/javascript" src="wowjs/wow.min.js"></script>
 
 
@@ -46,29 +48,42 @@
     <body>
         <div id="wrapper" class="dar">
 
-  <aside id="sidebar-wrapper">
-    <div class="sidebar-brand p-1 m-2">
-      <img src="../images/log.png">
+    <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <img src="../images/sk.png" class="my-1" align="center">
     </div>
+
     <ul class="sidebar-nav">
       <li>
-        <a href="#"><i class="fa fa-tachometer-alt"></i>Dashboard</a>
+        <a href="dashboard.html"><i class="fa fa-tachometer-alt"></i>Dashboard</a>
       </li>
 
       <li class="active">
-        <a href="staffaccount.html"><i class="fa fa-users"></i>Add Staffs</a>
+        <a href="staffaccount.html"><i class="fa fa-user-plus"></i>Add Staffs</a>
       </li>
 
        <li>
-        <a href="staffdetails.html"><i class="fa fa-users"></i>Preview Staffs</a>
+        <a href="staffdetails.html"><i class="fa fa-info-circle"></i>Staffs Details</a>
       </li>
 
       <li>
-        <a href="customersdetails.html"><i class="fa fa-users"></i>Customers</a>
+        <a href="customerdetails.html"><i class="fa fa-users"></i>Customers Details</a>
       </li>
 
       <li>
-        <a href="show.html"><i class="fa fa-users"></i>Arrange Chairs</a>
+        <a href="show.html"><i class="fa fa-sort"></i>Arrange Chairs</a>
+      </li>
+
+      <li>
+        <a href="hall.html"><i class="fa fa-home"></i>Check Hall</a>
+      </li>
+
+       <li>
+        <a href="show.html"><i class="fa fa-sort"></i>Chairs book per-day</a>
+      </li>
+
+       <li>
+        <a href="show.html"><i class="fa fa-sort"></i>Payment per Day</a>
       </li>
 
       <li>
@@ -98,6 +113,7 @@
 
     </ul>
   </aside>
+
 
     <div id="navbar-wrapper">
     <nav class="navbar navbar-inverse" style="position: fixed;width: 80%">
@@ -138,55 +154,108 @@
 
   <section id="content-wrapper">
     <div class="container my-5">
-      <div class="card my-5 p-2 wow bounceOut"  data-wow-duration="3s">
-        <!-- <img src="../images/logo.png"> -->
-        <div class="card-body p-5">  
-          <h3 class="card-header text-dark bg-light border-0">Create Account
-            <i class="fa fa-user ml-5" style="float: right;"></i>
-          </h3>
+      
+  <div class="card" id="hide">
 
-          <div class="row  p-3">
-            <div class="col-lg-5">
-              <div class="form-group mb-5">
-                <input type="text" name="" placeholder="Firstname" class="form-control" id="fname">
+    <h3 class="card-header">Create Account</h3>
+    <!-- <div class="box"></div> -->
+    <div class="row ">
+      <div class="col-md-3 my-5">
+        <img src="../images/log.png" class="rounded mx-auto d-block" style="height: 200px">
+      </div>
+
+
+      <div class="col-md-9">
+        <div class="card-body" style="background: whitesmoke;border-top-right-radius: 30em;border-bottom-left-radius: 30em;">
+          <!-- <div class="card-title"> Create Account</div> -->
+            <div class="row my-4">
+              <div class="col-md-6">
+                <p class="text-danger" id="note"></p>
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="First name" aria-label="First name" id="fname">
+                </div>
+
+                <p class="text-danger" id="note1"></p>
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" id="lname">
+                </div>
+
+                <p class="text-danger" id="note4"></p>
+                <div class="mb-0">
+                    <input type="email" class="form-control" placeholder="Email" aria-label="Email" id="email">
+                </div>
               </div>
 
-                <div class="form-group mb-5">
-                  <input type="number" name="" placeholder="Phone Number" class="form-control "  id="num">
-                </div>
-
-                <div class="form-group mb-5">
-                  <input type="email" name="" placeholder="Email" class="form-control "  id="email">
-                </div>
+           
+              <div class="col-md-6">
+                <p class="text-danger" id="note2"></p>
+                <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Phone Number" aria-label="Phone Number" id="num">
               </div>
 
-              <div class="col-lg-5">
-                 <div class="form-group mb-5">
-                  <input type="text" name="" placeholder="Lastname" class="form-control "  id="lname">
-                </div>
-
-                  <div class="form-group mb-5">
-                    <input type="text" name="" placeholder="Address" class="form-control "  id="loc">
-                  </div>
-                    
-                   <div class="form-group mb-5">
-                    <input type="password" name="" placeholder="Password" class="form-control "  id="pass">
-                  </div>
-                  <button class="btn btn-success wow lightSpeed"  onclick="reg()">Submit
-                    <i class="fa fa-arrow-right ml-3"></i>
-                  </button>
-                </div>
-
-
-                   <div class="col-lg-2 mb-5 p-3 my-5"></div>
+              <p class="text-danger" id="note3"></p>
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Address" aria-label="Address" id="loc">
               </div>
+
+                <p class="text-danger" id="note5"></p>
+               <div class="mb-0">
+                <input type="password" class="form-control" placeholder="Password" aria-label="Password" id="pass">
+              </div>
+
+            </div>
+
+            <div class="mb-4">
+              <center>
+                <button class="btn btn-success" onclick="reg()">Submit 
+                      <i class="fa fa-arrow-right ml-3"></i>
+                </button>
+              </center>
+            </div>
+          </div>
+
+          <div  style="display: flex;justify-content: space-evenly;width: 50%;place-items:center;margin: auto;">
+            <i class="fab fa-facebook fa-2x text-primary"></i>
+            <i class="fab fa-google fa-2x text-danger"></i>
+            <!-- <i class="fab fa-email fa-2x"></i> -->
+            <i class="fab fa-twitter fa-2x text-info"></i>
+          </div>
         </div>
       </div>
+        <div id="show"></div>
+     <div class="card-footer text-muted text-center">@FEMZY B Cinema</div>
+  </div>
   </div>
 
+  <div class="card" style="width: 300px;display:none ; height: 300px;" id="check">
+    <div class="card-body">
+      <div class="card-image">
+        <img src="../images/41.png" id="imag" style="height: 150px;width: 200px;">
+      </div>
+
+      <p class="card-text text-center">
+        Account Creation was successful.Kindly Proceed
+      </p>
+
+      <button class="btn btn-info" onclick="refresh()" style="margin: auto;display: grid;place-items:center">OK</button>
+    </div>
+  </div>
+
+</div>
   <i class="bg-dark p-2 fa fa-cog fa-2x  change-them" id="theme-button"></i>
-  
-     
+
+
+                               
+     <!-- <div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+</div>
+
+<form class="form-floating">
+  <input type="email" class="" id="" placeholder="name@example.com" value="test@example.com">
+  <label for="floatingInputInvalid">Invalid input</label>
+</form> -->
+
   </section>
 
 
@@ -206,27 +275,72 @@
       staffs = localStorage.lTUser ? JSON.parse(localStorage.lTUser) : staffs = [];
     reg=(p)=>
     {
-
-        // if (window.localStorage.lTUser) 
-        // {
-        //     jUser=window.localStorage.getItem("lTUser");
-        //     staffs = JSON.parse(jUser)
-        // }
-        var result = {
-            "Firstname":fname.value,
+        if (fname.value == "") 
+        {
+          document.getElementById("fname").focus();
+          note.innerHTML = "Firstname cannot be empty"
+        }
+        else if (lname.value =="") 
+          {
+           document.getElementById("lname").focus();
+          note1.innerHTML = "Lastname cannot be empty"
+          } 
+          else if (num.value == "") 
+            {
+              document.getElementById("num").focus();
+              note2.innerHTML = "Phone Number cannot be empty"
+            } 
+            // else if (num.value > 11 || num.value != 11) 
+            // {
+            //   document.getElementById("num").focus();
+            //   note2.innerHTML = "Check your Phone Number"
+            // }
+            else if (loc.value == "") 
+            {
+               document.getElementById("loc").focus();
+              note3.innerHTML = "Address cannot be empty"
+            } 
+            else if (email.value == "") 
+            {
+               document.getElementById("email").focus();
+              note4.innerHTML = "Email cannot be empty"
+            } 
+            else if (pass.value == "") 
+            {
+               document.getElementById("pass").focus();
+              note5.innerHTML = "Password cannot be empty"
+            } 
+            // else if(pass.value < 8 || pass.value >15)
+            // {
+            //   document.getElementById("pass").focus();
+            //   note5.innerHTML = "Password must be 8-15 characters"
+            // }
+            else
+            {
+            var result = {
+                "Firstname":fname.value,
             "Lastname":lname.value,
             "Phone":num.value,
             "Address":loc.value,
             "email":email.value,
             "Password":pass.value,
         };
-        // console.log(staffs);
         staffs.push(result);
-  window.localStorage.lTUser = JSON.stringify(staffs);
+    
+        if (window.localStorage.lTUser = JSON.stringify(staffs)) 
+        {
+            document.getElementById("hide").style.display = "none";
 
-        // sUser = JSON.stringify(staffs);
-        // window.localStorage.setItem("lTUser", sUser);
-        location.reload();
+            document.getElementById("check").style.display= "block";
+          }
+    
+       
+      }
+    }
+
+    refresh=()=>
+    {
+      location.reload(); 
     }
 </script>
 
@@ -278,6 +392,10 @@
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
     <script src="vendor/select2/select2.min.js">
     </script>
+
+    <!-- <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap-5.0.2-dist/popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="bootstrap@5.0.2-dist/js/bootstrap.min.js"></script> -->
 
     <!-- Main JS-->
     <script src="js/main.js"></script>

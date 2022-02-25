@@ -12,7 +12,7 @@ body {
   margin: var(--header-height) 0 0 0;
   background-color: var(--body-color);
   color: var(--text-color);
-  font-family: candara;
+  font-family: dongle;
 
 }
 
@@ -39,12 +39,11 @@ a:focus {
   margin-left: -250px;
   overflow-y: auto;
   overflow-x: hidden;
-  background:  linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  background:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/32.jpg);
   background-size: cover;
-    background-position: center;
-      /*background-attachment: fixed;*/
+  background-position: center;
+  background-repeat: no-repeat;
   transition: all 0.5s ease;
-  border-left: 10px solid #4C4C4C;
   transition: 0.5s;
   overflow: hidden;
 }
@@ -61,34 +60,19 @@ a:focus {
   padding: 20px 0;
 }
 .sidebar-brand img {
-   width: 70px;
-   /*display: flex;*/
-   /*left: 1em;*/
-   /*top: -0.5em;*/
-   /*box-shadow: 0px 0px 2px #F5AA20, 0px 0px 0px 5px #F5AA20;;*/
-   border-radius: 80%; 
-   height: 70px;
-   top: 0;
-
-   /*padding: 7px;*/
-   /*background: white;*/
-   position: relative;
-   float: left;
-}
-
-.sidebar-brand h2{
-  font-size: 20px;
-  color: #fff;
-  font-weight: 800;
-  text-transform: uppercase;
-  /*top: -4em;*/
-  /*left: 55px;*/
-  /*position: relative;*/
+ width: 80px;
+ border-radius: 80%; 
+ border-radius: 100px;
+ box-shadow: 0px 0px 2px #5f5f5f,
+  0px 0px 0px 5px #ecf0f3;
+ height: 80px;
+ top: 0;
+ position: relative;
 }
 
 .change{
   animation: change 4s infinite;
-  margin-top: -2em;
+  /*margin-top: -2em;*/
   text-transform: uppercase;
   text-shadow: 2px 2px 4px #000000 ! important;
   }
@@ -107,6 +91,7 @@ a:focus {
   margin: 0;
   padding: 0;
   list-style: none;
+
 }
 .sidebar-nav > li {
   text-indent: 10px;
@@ -114,7 +99,7 @@ a:focus {
   top: 6em;
   position: relative;
   margin-top: 10px;
-    border-top-left-radius: 30px;
+  border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
 }
 .sidebar-nav > li a {
@@ -171,6 +156,21 @@ a:focus {
   width: 60px;
 }
 
+.social
+{
+  display: flex;
+  top: 35em;
+  position: relative;
+  justify-content: space-between;
+}
+
+.social li i
+{
+  font-size: 25px;
+  width: 60px;
+  color: white;
+}
+
 
 .dark-theme{
   --title-color: #f1f3f2;
@@ -204,11 +204,45 @@ a:focus {
 {
   color: #323743
 }
+#content-wrapper .col-md-4 .card{
+  border-top: 5px solid whitesmoke;
+  border-bottom: 5px solid whitesmoke;
+    /*box-shadow: inset -1px 2px 1px 2px transparent;*/
+    animation: rounded 4s infinite;
+    height: 30vh;
+  }
+  @keyframes rounded{
+    0%{border-top:3px solid DodgerBlue;}
+    /*25%{backgrounurl()}*/
+    50%{border-top:3px solid #1DC4E7;}
+    100%{border-top:3px solid orangered;}
+  }  
 
+
+
+#content-wrapper .col-md-4 h4{
+  color: white
+}
+
+#content-wrapper .col-md-4 .card i{
+  color: white; 
+  position: absolute;
+  float: right;
+  right: 0;
+  font-size: 4em;
+  transform: 0.5s
+}
+
+/*#content-wrapper .col-md-4 .card span{
+  color: black;
+  font-size:50px;
+}
+*/
 #navbar-wrapper {
     width: 100%;
     position: absolute;
     z-index: 2;
+    background: whitesmoke;
 }
 #wrapper.toggled #navbar-wrapper {
     position: absolute;
@@ -216,16 +250,22 @@ a:focus {
 }
 #navbar-wrapper .navbar {
   border-width: 0 0 0 0;
-  /*background-color: #F5AA20;*/
   font-size: 24px;
   margin-bottom: 0;
   border-radius: 0;
 }
 #navbar-wrapper .navbar a {
+  color: black;
+}
+
+ #navbar-wrapper .navbar h2{
+  font-size: 25px;
   color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 #navbar-wrapper .navbar a:hover {
-  color: #Fff;
+  color: pink;
 }
 
 #content-wrapper {
@@ -233,6 +273,7 @@ a:focus {
   position: absolute;
   padding: 15px;
   top: 100px;
+     
 }
 #wrapper.toggled #content-wrapper {
   position: absolute;
@@ -368,3 +409,52 @@ a:focus {
     margin-right: 250px;
   }
 }
+
+/*.Search
+{
+  display: flex !important;
+}*/
+.form-control
+{
+ /* border-radius: 50px !important;
+  box-shadow: 1px 1px 1px 1px;*/
+  width: 20%;
+  border:  none;
+  border-bottom: 1px solid black;
+
+}
+
+.form-control:focus
+{
+  box-shadow: none;
+  border: 1px solid black
+}
+
+ .Search .form-control:hover
+ {
+  width: 100%;
+  transition: 1s ease;
+ }
+.modal-body .form-control
+{
+  border:  none;
+  border-bottom: 1px solid white;
+  background: transparent;
+  color:  white;
+
+}
+
+.modal-body
+{
+  background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/log.png);
+  background-repeat: no-repeat;
+  /*background-size: cover;*/
+  background-position: center;
+  background-attachment: fixed;
+}
+.card
+{
+  width: 100%;
+  box-shadow: 1px 2px 3px 2px;
+}
+

@@ -63,7 +63,7 @@
                             <img src="../images/log.png">
                         </div>
 
-                        <button class="btn btn-success" onclick="login()">Login <i class="fa fa-arrow-right ml-3"></i></button>
+                        <button type="button" class="btn btn-success" onclick="login()"> <span></span> Login <i class="fa fa-arrow-right ml-3"></i></button>
                     </div>
                 </div>
             </div>
@@ -104,27 +104,23 @@
     login=()=>
     {
         let data = JSON.parse(localStorage.getItem("lTUser"));
-        // console.log(data);
         for (i = 0; i < data.length; i++) {
 
-            if(email.value == data[i].email && password.value == data[i].Password)
+            if(email.value == data[i].email && password.value == data[i].password)
             {
                 window.open("book.html")
                 // break;
             }
             else if (email.value == "") 
             {
-                // document.getElementById('email').style.border= "2px solid red";
                 document.getElementById('email').focus();
                 message.innerHTML = "Please enter a valid email";
                 // break;
             }
              else if (password.value =="") 
             {
-                // document.getElementById('email').style.border= "2px solid red";
                 document.getElementById('password').focus();
                 message1.innerHTML = "Enter your Password";
-                // break;
             }            
             else{
                 message.innerHTML ="<p class='bg-danger text-light p-2'>Incorrect Username or Password</p>";

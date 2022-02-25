@@ -36,8 +36,27 @@
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
     <script type="text/javascript" src="wowjs/wow.min.js"></script>
+   <!--  <script type="text/javascript">
+      // let juser = JSON.stringify(localStorage.getItem("registeredUsers"));
+      let user = JSON.parse(localStorage.getItem("registeredUsers"));
 
+      function block(){  
+        var enter= prompt ("Enter the pass code");
+        var found = user.find((val, i)=> val.password == enter.value);
+        
+        if (found)
+         {
+            window.open("index.html")
+         }
+         else
+         {
+             window.open("register.html")
+         }
+}
+      window.onreload=block();
+    </script>
 
+ -->
         <script>
         new WOW().init();
       </script>
@@ -53,7 +72,7 @@
 
     <ul class="sidebar-nav">
       <li class="active">
-        <a href="#"><i class="fa fa-tachometer-alt"></i>Dashboard</a>
+        <a href="dashboard.html"><i class="fa fa-tachometer-alt"></i>Dashboard</a>
       </li>
 
       <li>
@@ -61,19 +80,23 @@
       </li>
 
        <li>
-        <a href="staffdetails.html"><i class="fa fa-info-circle"></i>Preview Staffs</a>
+        <a href="staffdetails.html"><i class="fa fa-info-circle"></i>Staffs Details</a>
       </li>
 
       <li>
-        <a href="#"><i class="fa fa-users"></i>Customers</a>
+        <a href="customerdetails.html"><i class="fa fa-users"></i>Customers Details</a>
       </li>
 
       <li>
         <a href="show.html"><i class="fa fa-sort"></i>Arrange Chairs</a>
       </li>
 
+      <li>
+        <a href="hall.html"><i class="fa fa-home"></i>Check Hall</a>
+      </li>
+
        <li>
-        <a href="show.html"><i class="fa fa-sort"></i>No of Chairs booked per-day</a>
+        <a href="show.html"><i class="fa fa-sort"></i>Chairs book per-day</a>
       </li>
 
        <li>
@@ -173,7 +196,11 @@
          <div class="col-md-4">
             <div class="card p-3" style="background: teal">
               <h4 class="text-light">Total number of Ticket Booked</h4><br>
+              <div style=" display: flex;">
+                <p id="sh" style="font-size: 5em;"></p>
               <i class="fa fa-question fa-1x m-4 p-3"></i>
+
+              </div>
 
             </div>
         </div>
@@ -246,10 +273,16 @@
     <script src="vendor/select2/select2.min.js">
     </script>
 
+    
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap-5.0.2-dist/popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="bootstrap@5.0.2-dist/js/bootstrap.min.js"></script>
+
     <!-- Main JS-->
     <script src="js/main.js"></script>
-
+    
     <script>
+
     // var b = '';
     // var people;
     if (window.localStorage.lTUser) 
@@ -272,6 +305,17 @@
             c = i+1
         } 
         sho.innerHTML = c; 
+    }
+
+    if (window.localStorage.chair) 
+    {
+        jUser = window.localStorage.getItem("chair");
+        chairs = JSON.parse(jUser);
+        for(i=0; i<customers.length; i++)
+        {
+            u = i+1
+        } 
+        sh.innerHTML = u; 
     }
     const $button  = document.querySelector('#sidebar-toggle');
   const $wrapper = document.querySelector('#wrapper');

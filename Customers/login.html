@@ -90,39 +90,68 @@
 </html>
 
 <script>
+    // login=()=>
+    // {
+    //     let datas = JSON.parse(localStorage.getItem("registeredUsers"));
+    //     console.log(datas.length);
+    //     for (i = 0; i < datas.length; i++) {
+    //         // u = datas[i].uname + " "+ datas[i].password;
+    //         // //alert(u);
+
+    //         if(uname.value == datas[i].uname && password.value == datas[i].password)
+    //         {
+    //             window.open("book.html")
+    //             break;
+    //         }
+    //         else if (uname.value == "") 
+    //         {
+    //             // document.getElementById('uname').style.border= "2px solid red";
+    //             document.getElementById('uname').focus();
+    //             message.innerHTML = "Enter Username";
+    //             break;
+    //         }
+    //          else if (password.value =="") 
+    //         {
+    //             // document.getElementById('uname').style.border= "2px solid red";
+    //             document.getElementById('password').focus();
+    //             message1.innerHTML = "Enter Password";
+    //             break;
+    //         }            
+    //         else{
+    //             message.innerHTML ="<p class='bg-danger text-light p-2'>Incorrect Username or Password</p>";
+    //             //break;
+    //         }
+    //     }
+    // }
+    let juser = JSON.stringify(localStorage.getItem("registeredUsers"));
+    let user = JSON.parse(localStorage.getItem("registeredUsers"));
     login=()=>
     {
-        let datas = JSON.parse(localStorage.getItem("registeredUsers"));
-        console.log(datas.length);
-        for (i = 0; i < datas.length; i++) {
-            // u = datas[i].uname + " "+ datas[i].password;
-            // //alert(u);
-
-            if(uname.value == datas[i].uname && password.value == datas[i].password)
-            {
-                window.open("book.html")
-                break;
-            }
-            else if (uname.value == "") 
+        var found = user.find((val, i)=>val.uname == uname.value && val.password == password.value)
+         if (uname.value == "") 
             {
                 // document.getElementById('uname').style.border= "2px solid red";
                 document.getElementById('uname').focus();
                 message.innerHTML = "Enter Username";
-                break;
+                // break;
             }
              else if (password.value =="") 
             {
                 // document.getElementById('uname').style.border= "2px solid red";
                 document.getElementById('password').focus();
                 message1.innerHTML = "Enter Password";
-                break;
-            }            
-            else{
-                message.innerHTML ="<p class='bg-danger text-light p-2'>Incorrect Username or Password</p>";
-                //break;
-            }
-        }
+                // break;
+            }      
+        else if (found)
+         {
+            window.open("selector.html")
+         }
+         else
+         {
+             message.innerHTML ="<p class='bg-danger text-light p-2'>Incorrect Username or password"
+         }
     }
+
 </script>
 
 

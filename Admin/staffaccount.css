@@ -1,8 +1,8 @@
-body{
-  font-family: candara;
+/*body{
+  h
   margin: 0;
   padding: 0;
-}
+}*/
 .container, button
 {
 	place-items: center;
@@ -25,7 +25,7 @@ body {
   margin: var(--header-height) 0 0 0;
   background-color: var(--body-color);
   color: var(--text-color);
-  font-family: dongle;
+  /*font-family: dongle;*/
 
 }
 
@@ -425,7 +425,7 @@ a:focus {
   background-size: 100% top;
   background-position: bottom;
   background-repeat: no-repeat;*/
-  width: 80%;
+  width: 70%;
   box-shadow: 1px 2px 1px 2px;
 }
 
@@ -441,39 +441,40 @@ a:focus {
   margin: auto;
   display: grid;
 }
-.card .row .col-lg-5 .form-control
+.card .row  .form-control
 {
 	border: none;
 	border-bottom: 0.8px solid black;
 	background: none;
 	color: black;
 	outline: none;
-  padding: 8px
+  padding: 8px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
-.card .row .col-lg-2
+/*.card .row .col-lg-2
 {
   background: url(../images/log.png);
   background-size: cover;
   background-position: center;
   height: 30vh;
-}
-label
-{
-  /*display: none;*/
-  color: teal;
-  font-size: 15px;
-  font-weight: 450px
-}
+}*/
 
-.card .row .col-lg-4 .form-control:focus
+.card .row .col-md-8 .form-control:focus
 {
 	outline: 0;
   box-shadow: none;
+  border: none;
+  background: transparent;
 }
 .card .btn-success
 {
   background-color: transparent;
   color: black;
+  /*display: grid;*/
+  /*margin: auto;*/
+  place-items:  center;
+  box-shadow: 2px 1px 2px 1px;
 }
 .card .btn-success:hover
 {
@@ -481,8 +482,17 @@ label
   transition: 1s ease;
   color: white;
 }
-/*.card .row .col-lg-6 input::placeholder
+.card .row .col-md-9 .form-control:hover::placeholder
 {
-	color: black;
-}*/
+	top: -15px;
+  position: relative;
+  color: black;
+  transition: 2s ease-in;
+}
+
+.card .row .col-md-9 .form-control:focus
+{
+box-shadow: none;
+border-bottom: 1px solid black;
+}
 

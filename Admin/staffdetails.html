@@ -28,7 +28,7 @@
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
     <link rel="stylesheet" type="text/css" href="wowjs/css/libs/animate.css">
-    <link rel="stylesheet" type="text/css" href="dashboard.css">
+    <link rel="stylesheet" type="text/css" href="staffdetails.css">
 
 
 
@@ -45,60 +45,72 @@
 </head>
     <body>
       <div id="wrapper">
+ <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <img src="../images/sk.png" class="my-1" align="center">
+    </div>
 
-    <aside id="sidebar-wrapper">
-      <div class="sidebar-brand">
-        <img src="../images/sk.png" class="my-1" align="center">
-      </div>
+    <ul class="sidebar-nav">
+      <li>
+        <a href="dashboard.html"><i class="fa fa-tachometer-alt"></i>Dashboard</a>
+      </li>
 
-      <ul class="sidebar-nav">
-        <li>
-          <a href="dashboard.html"><i class="fa fa-tachometer-alt"></i>Dashboard</a>
-        </li>
+      <li>
+        <a href="staffaccount.html"><i class="fa fa-user-plus"></i>Add Staffs</a>
+      </li>
 
-        <li>
-          <a href="staffaccount.html"><i class="fa fa-user-plus"></i>Add Staffs</a>
-        </li>
+       <li class="active">
+        <a href="staffdetails.html"><i class="fa fa-info-circle"></i>Staffs Details</a>
+      </li>
 
-         <li class="active">
-          <a href="staffdetails.html"><i class="fa fa-info-circle"></i>Preview Staffs</a>
-        </li>
+      <li>
+        <a href="customerdetails.html"><i class="fa fa-users"></i>Customers Details</a>
+      </li>
 
-        <li>
-          <a href="customerdetails.html"><i class="fa fa-users"></i>Customers</a>
-        </li>
+      <li>
+        <a href="show.html"><i class="fa fa-sort"></i>Arrange Chairs</a>
+      </li>
 
-        <li>
-          <a href="show.html"><i class="fa fa-sort"></i>Arrange Chairs</a>
-        </li>
+      <li>
+        <a href="hall.html"><i class="fa fa-home"></i>Check Hall</a>
+      </li>
 
-        <li>
-          <a href="#"><i class="fa fa-user"></i>Profile</a>
-        </li>
-         <li>
-          <a href="logout.php"><i class="fa fa-power-off"></i>Logout</a>
-        </li>
-      </ul>
+       <li>
+        <a href="show.html"><i class="fa fa-sort"></i>Chairs book per-day</a>
+      </li>
 
-      <ul class="social p-2 m-3">
-        <li class="list-group">
-          <i class="fab fa-facebook p-1" style="background-color: blue; color: white; width: 30px"></i>
-        </li>
+       <li>
+        <a href="show.html"><i class="fa fa-sort"></i>Payment per Day</a>
+      </li>
 
-        <li class="list-group">
-          <i class="fab fa-twitter p-1" style="color: #4EC5EF; width: 30px"></i>
-        </li>
+      <li>
+        <a href="#"><i class="fa fa-user"></i>Profile</a>
+      </li>
+       <li>
+        <a href="logout.php"><i class="fa fa-power-off"></i>Logout</a>
+      </li>
+    </ul>
 
-        <li class="list-group">
-          <i class="fab fa-whatsapp p-1" style="background-color: green; color: white; width: 30px"></i>
-        </li>
+    <ul class="social p-2 m-3">
+      <li class="list-group">
+        <i class="fab fa-facebook p-1" style="background-color: blue; color: white; width: 30px"></i>
+      </li>
 
-        <li class="list-group p-1" style="width: 30px; color: #4EC5EF">
-          <i class="fab fa-instagram"></i>
-        </li>
+      <li class="list-group">
+        <i class="fab fa-twitter p-1" style="color: #4EC5EF; width: 30px"></i>
+      </li>
 
-      </ul>
-    </aside>
+      <li class="list-group">
+        <i class="fab fa-whatsapp p-1" style="background-color: green; color: white; width: 30px"></i>
+      </li>
+
+      <li class="list-group p-1" style="width: 30px; color: #4EC5EF">
+        <i class="fab fa-instagram"></i>
+      </li>
+
+    </ul>
+  </aside>
+
 
     <div id="navbar-wrapper">
       <nav class="navbar navbar-inverse">
@@ -130,15 +142,15 @@
 
   <section id="content-wrapper">
     <div class="container my-2">
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content p-2">
-            <div class="modal-header bg-success">
-              <h5 class="modal-title text-light" id="exampleModalLongTitle">Edit Staff Details</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content p-2">
+              <div class="modal-header bg-success">
+                <h5 class="modal-title text-light" id="exampleModalLongTitle">Edit Staff Details</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
 
               <div class="modal-body">
                 <div class="mb-1">
@@ -171,44 +183,50 @@
                     </div>
                     
                     <div class="modal-footer bg-success">
-                      <button class="btn btn-primary wow lightSpeed"  onclick="reg()">Save</button>
+                      <button class="btn btn-primary"  onclick="reg()">Save</button>
                       <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>  
                     </div>
                   </div>
                   </div>
                 </div>
             </div>
-            
-            <div class="card p-2">
-              <h3 class="p-3 card-header bg-dark text-light">Staff Details <i class="fa fa-users fa-2x" style="float: right;"></i></h3>
-                <div class="card-body">
-                  <table class="table-striped text-dark table p-4" style="overflow-x:auto;">
+
+                          
+           <div class="card">
+                        <h3 class="card-header border-5 text-dark">Staffs Details <i class="fa fa-users fa-2x" style="float: right;"></i></h3>
+                        <div class="card-body">
+                          <center>
+                            <table class="table table-responsive table-hover table-dark table-striped" style="width: fit-content;">
                           <!-- <thead> -->
-                  <tr>
-                  <th>S/N</th>
-                  <th>Firstname</th>
-                  <th>Lastname</th>
-                  <th>Phone Number</th>
-                  <th>Address</th>
-                  <th>Email</th>
-                  <th>Delete</th>
-                  <th>Edit</th>
-                  </tr>
+                            <tr>
+                              <th>S/N</th>
+                              <th>Firstame</th>
+                              <th>Lastame</th>
+                              <th>Email</th>
+                              <th>Username</th>
+                              <th>Password</th>
+                              <th>Edit</th>
+                              <th>Delete</th>
+                            </tr>
+                            <div style="display: flex;">
+                                <input type="text" name="" placeholder="Search Staffs" class="form-control search"><i class="fa fa-search"></i>
+                                <br>
+                                <!-- <button class="btn btn-primary">Search <i class="fa fa-search"></i></button>
+                                <br> -->
+                            </div>
+                            <br>
+                           
+                            <!-- </thead> -->
 
-                  <div style="display: flex;">
-                    <input type="text" name="" placeholder="Search Staff" class="form-control" style="border-radius: 50px">
-                    <br>
-                    <button class="btn btn-primary">Search <i class="fa fa-search"></i></button>
-                    <br>
-                  </div>
-                    <br>
-                     <!-- </thead> -->
-
-                    <tbody id="l"></tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
+                            <tbody id="l">
+                                
+                            </tbody>
+                          </table>
+                          </center>
+                        </div>
+                        <div class="card-footer text-muted text-center">@FEMZY B Cinema</div>
+                      </div>
+          </div>
     </body>
 </html>
 
@@ -233,8 +251,11 @@
     <script src="vendor/circle-progress/circle-progress.min.js"></script>
     <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
+    <script src="vendor/select2/select2.min.js"></script>
+    
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap-5.0.2-dist/popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="bootstrap@5.0.2-dist/js/bootstrap.min.js"></script>
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
@@ -254,8 +275,8 @@
             +staffs[i].Phone+"</td><td>"
             +staffs[i].Address+"</td><td>"
             +staffs[i].email+"</td><td>"
-            +'<button class="bg-danger text-light fa fa-trash p-3" onclick="remove('+i+')"></button>'+"</td><td>"
-            +'<button  class="bg-success text-light fa fa-pencil-square-o p-3" onclick="edit('+i+')" data-toggle="modal" data-target="#exampleModalCenter"></button>'+"</td><tr>"
+            +'<button  class="bg-success text-light fa fa-pencil-square-o p-3" onclick="edit('+i+')" data-toggle="modal" data-target="#exampleModalCenter"></button>'+"</td><td>"
+            +'<button class="bg-danger text-light fa fa-trash p-3" onclick="remove('+i+')"></button>'+"</td><tr>"
         } 
         l.innerHTML = b; 
     }
@@ -264,8 +285,10 @@
         userList = JSON.parse(window.localStorage.getItem("lTUser"));
         // editableUser = userList[e]
         newList = userList.splice(i, 1);
-        alert(i);
+        if (confirm('Are you sure ?'))
+        {
         window.localStorage.setItem("lTUser", JSON.stringify(userList));
+        }
         location.reload(); 
     }
 
@@ -284,14 +307,17 @@
     }
   }
 
-  reg=()=>
+  reg=(e)=>
   {
+    let myindex;
     update = JSON.parse(window.localStorage.getItem("lTUser"));
     for(let i=0; i<staffs.length; i++)
     {
-      if (fname.value == staffs[i].Firstname) 
-      {
-        staffs.splice(i, 1,{
+      myindex=i;
+    }
+    {
+      
+        staffs.splice(myindex, 1,{
             "Firstname":fname.value,
             "Lastname":lname.value,
             "Phone":num.value,
@@ -301,9 +327,18 @@
         result = JSON.stringify(staffs);
         window.localStorage.setItem("lTUser",result);
         location.reload();
-      }
     }
-  }
+      }
+    
+    $(document).ready(function(){
+    $(".search").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#l tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+  
 </script>
 
 
