@@ -2,7 +2,7 @@ body {
    font-family: candara; 
    margin: 0;
 }
-.container
+.container-fluid
 {
 	margin: auto;
 	place-items: center;
@@ -16,13 +16,13 @@ body {
 
 .card
 {
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	border-radius: 5px !important;
-	width: 55%;
+	/*background: linear-gradient(45deg, orangered, yellow, orange);*/
+	border-radius: 10px !important;
+	width: 50%;
 	box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.3), -2px 2px 4px 2px #fff;
-	top: 2em;
+	top: 5em;
 	position: relative;
-	padding: 2px;
+	padding: 5px;
 }
 
 .change
@@ -103,6 +103,7 @@ label
     border-bottom: 1px solid white;
     background:  transparent;
     color:  white;
+    border-radius: 0;
 }
 
 .card .form-control:focus
@@ -134,7 +135,7 @@ label
 	color: white;
 	/*float: left;*/
 	background: transparent;
-	/*border-radius: 50px;*/
+	border-radius: 5px;
 	border: 2px solid #006D72;
 	border-top-left-radius: 25px;
 	border-bottom-left-radius: 25px;
@@ -177,4 +178,20 @@ label
 {
 	color: white;
 
+}
+
+@media (max-width: 991px)
+{
+    .card{
+        width: 100% !important;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        position: relative;
+    }
+
+    .second
+	{
+  	height: 50vh;
+	}
 }

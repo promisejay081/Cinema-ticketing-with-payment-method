@@ -9,64 +9,35 @@
 
     <!-- Title Page-->
     <title>Login</title>
-
-    <!-- Fontfaces CSS-->
-    <link href="css/font-face.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-
-    <!-- Bootstrap CSS-->
-    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-
-    <!-- Vendor CSS-->
-    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-    <link rel="stylesheet" type="text/css" href="wowjs/css/libs/animate.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="login.css">
 
 
-
-
-    <!-- Main CSS-->
-    <link href="css/theme.css" rel="stylesheet" media="all">
-    <script type="text/javascript" src="wowjs/wow.min.js"></script>
-
-
-    <script>
-        new WOW().init();
-    </script>
-
 </head>
     <body>
-        <div class="container">
-            <div class="card my-5 wow bounceIn" data-wow-duration="0s">
-               
-                <div class="card-body change">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="change">
                     <div class="row">
-                        <div class="col-lg-8 p-5">
+                        <div class="col-lg-8">
                             <h3 class="card-header border-0 mb-4 text-light">Sign In</h3>
                                 
-
-                                <div class="form-group mb-4">
-                                    <p id="message" class="p-2" style="color: red"></p>
+                                <div class="form-group mb-2">
+                                    <p id="message" class="p-2" style="color: red;border-radius: 40px;"></p>
                                     <label>Username</label>
                                     <input type="text" name="" id="uname" class="form-control" placeholder="Enter Username">
                                 </div>
                                 
-                                <div class="form-group mb-4">
+                                <div class="form-group mb-2">
                                     <p id="message1" class="p-2" style="color: red"></p>
                                     <label>Password</label>
                                     <input type="password" name="" id="password" class="form-control" placeholder="Password">
+                                    <i class="fa fa-eye" id="show"></i>
                                  </div>
 
                                     <a href="#" class="text-primary">Forget Password ? </a>
                                     <br><br>
+                                    <div class="d-flex">
                                     <button class="btn btn-xl" onclick="login()">Login 
                                      <i class="fa fa-arrow-right ml-3"></i>
                                     </button>
@@ -75,55 +46,19 @@
                                        <a href="register.html" class="ml-2">Sign Up</a>
                                     </button>
                                     <br>
+                                </div>
                         </div>
 
-                        <div class="col-lg-4 second">
-
-                            <!-- <h2 style="text-align: center;" class="my-5">Welcome <br>Back</h2> -->
-                        
-                        </div>
+                        <div class="col-lg-4 second"></div>
                     </div>
                 </div>
+
             </div> 
         </div>
     </body>
 </html>
 
 <script>
-    // login=()=>
-    // {
-    //     let datas = JSON.parse(localStorage.getItem("registeredUsers"));
-    //     console.log(datas.length);
-    //     for (i = 0; i < datas.length; i++) {
-    //         // u = datas[i].uname + " "+ datas[i].password;
-    //         // //alert(u);
-
-    //         if(uname.value == datas[i].uname && password.value == datas[i].password)
-    //         {
-    //             window.open("book.html")
-    //             break;
-    //         }
-    //         else if (uname.value == "") 
-    //         {
-    //             // document.getElementById('uname').style.border= "2px solid red";
-    //             document.getElementById('uname').focus();
-    //             message.innerHTML = "Enter Username";
-    //             break;
-    //         }
-    //          else if (password.value =="") 
-    //         {
-    //             // document.getElementById('uname').style.border= "2px solid red";
-    //             document.getElementById('password').focus();
-    //             message1.innerHTML = "Enter Password";
-    //             break;
-    //         }            
-    //         else{
-    //             message.innerHTML ="<p class='bg-danger text-light p-2'>Incorrect Username or Password</p>";
-    //             //break;
-    //         }
-    //     }
-    // }
-    let juser = JSON.stringify(localStorage.getItem("registeredUsers"));
     let user = JSON.parse(localStorage.getItem("registeredUsers"));
     login=()=>
     {
@@ -150,34 +85,15 @@
          {
              message.innerHTML ="<p class='bg-danger text-light p-2'>Incorrect Username or password"
          }
-    }
+    }      
 
 </script>
+<script>
+    $(document).ready(function(){
+            $("#show").click(function(){
+                $("#password").show();
+            });
+        });
+</script>
 
-
-
-    <!-- Jquery JS-->
-
-    <script src="vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="vendor/slick/slick.min.js">
-    </script>
-    <script src="vendor/wow/wow.min.js"></script>
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
-
-    <!-- Main JS-->
-    <!-- <script src="js/main.js"></script> -->
     

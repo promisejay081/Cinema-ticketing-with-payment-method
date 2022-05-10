@@ -9,112 +9,97 @@
 
     <!-- Title Page-->
     <title>Home</title>
+    <style>
 
-    <!-- Fontfaces CSS-->
-    <link href="css/font-face.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+      .container,img
+      {
+        place-items: center;
+        display: grid;
+        margin: auto;
+      }
+      .card
+    {
+      width:35%
+    }
 
-    <!-- Bootstrap CSS-->
-    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    img
+    {
+      animation: img 5s infinite;
+    }
 
-    <!-- Vendor CSS-->
-    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-    <link rel="stylesheet" type="text/css" href="wowjs/css/libs/animate.css">
+    @keyframes img{
+      0%{transform: skew(40deg);}
+      25%{transform: scaleX(1.0);}
+      50%{transform-origin: top;}
+      100%{transform: rotate(180deg);}
+    }
 
+     @media (max-width: 991px)
+            {
+                .card{
+                    width: 100% !important;
+                }
+            }
+    </style>
+    
 
-
-
-    <!-- Main CSS-->
-    <link href="css/theme.css" rel="stylesheet" media="all">
-    <script type="text/javascript" src="wowjs/wow.min.js"></script>
-
-
-    <script>
-        new WOW().init();
-    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
 </head>
-    <body>
-    	<form id="paymentForm">
-  <div class="form-group">
-    <label for="email">Email Address</label>
-    <input type="email" id="email-address" required />
+  <body>
+  <div class="container my-3">
+    <div class="card p-5 shadow">
+      <img src="../images/logo.png"  style="height: 130px;">
+      <form id="paymentForm">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email-address" required / class="form-control" placeholder="Email Address">
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="tel" id="amount" required / readonly class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" / class="form-control" required placeholder="Firstname">
+      </div>
+      <div class="form-group">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" / class="form-control" required placeholder="Lastname">
+      </div>
+      <div class="form-submit">
+        <button type="submit" onclick="payWithPaystack()" class="btn btn-primary"> Pay </button>
+      </div>
+    </form>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="amount">Amount</label>
-    <input type="tel" id="amount" required />
-  </div>
-  <div class="form-group">
-    <label for="first-name">First Name</label>
-    <input type="text" id="first-name" />
-  </div>
-  <div class="form-group">
-    <label for="last-name">Last Name</label>
-    <input type="text" id="last-name" />
-  </div>
-  <div class="form-submit">
-    <button type="submit" onclick="payWithPaystack()"> Pay </button>
-  </div>
-</form>
 <script src="https://js.paystack.co/v1/inline.js"></script> 
 
     </body>
 </html>
-
-
-
-    <!-- Jquery JS-->
-
-    <script src="vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="vendor/slick/slick.min.js">
-    </script>
-    <script src="vendor/wow/wow.min.js"></script>
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
-
-    <!-- Main JS-->
-    <!-- <script src="js/main.js"></script> -->
     
-    <script>	
-	const paymentForm = document.getElementById('paymentForm');
-	paymentForm.addEventListener("submit", payWithPaystack, false);
-	function payWithPaystack(e) {
-	  e.preventDefault();
-	  let handler = PaystackPop.setup({
-	    key: 'pk_test_7899ea70993434a5f69604cd8c55702e7ca41fed', // Replace with your public key
-	    email: document.getElementById("email-address").value,
-	    amount: document.getElementById("amount").value * 100,
-	    ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-	    // label: "Optional string that replaces customer email"
-	    onClose: function(){
-	      alert('Window closed.');
-	    },
-	    callback: function(response){
-	      let message = 'Payment complete! Reference: ' + response.reference;
-	      alert(message);
-	    }
-	  });
-	  handler.openIframe();
-	}
+<script>	
+  pay =JSON.parse(window.localStorage.getItem("Pay"));
+    amount.value=pay.amount;
+  	const paymentForm = document.getElementById('paymentForm');
+  	paymentForm.addEventListener("submit", payWithPaystack, false);
+  	function payWithPaystack(e) {
+  	  e.preventDefault();
+  	  let handler = PaystackPop.setup({
+  	    key: 'pk_test_fc205cf37c4eac79757f102a4e1864dd2e0f921f', // Replace with your public key
+  	    email: document.getElementById("email-address").value,
+  	    amount: document.getElementById("amount").value * 100,
+  	    ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+  	    // label: "Optional string that replaces customer email"
+  	    onClose: function(){
+  	      alert('Window closed.');
+  	    },
+  	    callback: function(response){
+  	      let message = 'Payment complete! Reference: ' + response.reference;
+  	      alert(message);
+        window.open("video.html")
+  	    }
+  	  });
+  	  handler.openIframe();
+  	}
 </script>

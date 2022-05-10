@@ -1,8 +1,10 @@
 .card
 {
-	width: 55%;
+	width: 70%;
 	margin: auto;
-	box-shadow: 2px 1px 2px 3px
+	box-shadow: 2px 1px 2px 3px;
+	top: 4em;
+	position: relative;
 }
 
 .card .first
@@ -28,9 +30,7 @@
 
 .card .form-control
 {
-	/*border-radius: 30px;*/
-	/*box-shadow: i5px 5px 5px #cbced1,
-     -15px -15px 15px #ffffff;*/
+	border-radius: 0;
     border: none;
     border-bottom: 1px solid black;
 }
@@ -59,4 +59,12 @@
 	color: white;
 	border-top-left-radius: 25px;
 	border-bottom-right-radius: 25px;
+}
+@media (max-width: 991px)
+{
+    .card{
+        width: 100% !important;
+        top: 0;
+        position: relative;
+    }
 }

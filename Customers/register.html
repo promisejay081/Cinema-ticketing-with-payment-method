@@ -10,56 +10,42 @@
     <!-- Title Page-->
     <title>Register</title>
 
-    <!-- Fontfaces CSS-->
-    <link href="css/font-face.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-    <!-- Bootstrap CSS-->
-    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-
-    <!-- Vendor CSS-->
-    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-    <link rel="stylesheet" type="text/css" href="wowjs/css/libs/animate.css">
     <link rel="stylesheet" type="text/css" href="register.css">
-
-
-
-
-    <!-- Main CSS-->
-    <link href="css/theme.css" rel="stylesheet" media="all">
-    <script type="text/javascript" src="wowjs/wow.min.js"></script>
-
-
-    <script>
-        new WOW().init();
-    </script>
 
 </head>
     <body>
 
         <div class="container">
-            <div class="card my-5 wow bounceIn" data-wow-duration="5s">
-                <div class="card-body">
+            <div class="card wow bounceIn" data-wow-duration="1s">
+                <div id="check" style="display: none;">
+                    <div class="card-body">
+                      <div class="card-image mb-3">
+                        <img src="../images/41.png" id="imag" style="height: 150px;width: 200px;">
+                      </div>
+                      <br>
+
+                      <p class="card-text text-center mb-3" style="font-size: 15px;color: black;">
+                        Registration was successful.<br>Kindly Proceed.
+                      </p>
+
+                      <button class="btn btn-info" onclick="refresh()" style="margin: auto;display: grid;place-items:center;width:120px">OK</button>
+                    </div>
+                  </div>
+                <div class="card-body" id="hide">
                     <div  class="row">
-                       <div class="col-lg-4 my-5 first"></div>
+                       <div class="col-lg-4 first"></div>
 
                        <div class="col-lg-8 p-5">
                         <h4 class="card-header bg-secondary text-light p-3">Create Account
                             <i class="fa fa-user fa-2x" style="float: right;"></i>
                         </h4>
-                        <br>
+                        <h3 id="message"></h3>
                         <div class="row">
                             <div class="col-lg-6">
                                 <p id="note" style="font-size: 13px; top: -5px;position: relative;color: red;"></p>
-                                <div class="my-3 form-group">
+                                <div class="my-3 form-group form-floating">
                                     <input type="text" name="" class="form-control" placeholder="Firstname" id="firstname">
                                 </div>
                             </div>
@@ -84,7 +70,7 @@
 
                         <div class="row">
                             <div class="col-lg-6">  
-                            <p id="note3" style="font-size: 13px;top: -5px;position: relative;"></p>
+                            <p id="note3" style="font-size: 13px;top: -5px;position: relative;color: red;"></p>
                                 <div class="my-3 form-group">        
                                     <input type="text" name="" id="uname" class="form-control" placeholder="Username">
                                 </div>       
@@ -92,23 +78,31 @@
 
                             <div class="col-lg-6">
                                 <p id="note4" style="font-size: 13px;top: -5px;position: relative;"></p>
-                                <div class="my-3 form-group">
+                                <div class="my-3 form-group d-flex">
                                  <input type="password" id="password" name="" class="form-control" placeholder="Enter Password">
+                                 <i class="fa fa-eye" onclick="show()" id="show"></i>
+                                 <i class="fa fa-eye-slash" onclick="show()" id="sow" style="display: none;"></i>
                                 </div>
                             </div>
                             <button class="btn btn-success mt-4" onclick="register()">Register
-                                <i class="fa fa-arrow-right ml-2"></i> </button>
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </button>
                         </div>
                         </div>
                        </div>
                    </div>
-
+                     <!-- <div class="card-footer text-muted text-center">@FEMZY B Cinema</div> -->
                 </div>
+
             </div>
         </div>
 <script type="text/javascript">
+    let user = JSON.parse(localStorage.getItem("registeredUsers"));
+
       register=()=>
       {
+        var found = user.find((val, i)=>val.uname == uname.value);
+
        
         if (firstname.value == "")
         {
@@ -136,6 +130,11 @@
             document.getElementById("uname").style.border= "2px solid red";
             note3.innerHTML = "Input cannot be empty";
         }
+        else if (found) 
+        {
+            document.getElementById("uname");
+            note3.innerHTML = "Username already exist";
+        }
         else if (password.value ==  "") 
         {
             document.getElementById("password").style.border= "2px solid red";
@@ -151,6 +150,7 @@
          let pwd = password.value;
 
         finalResult = {
+            // "id":  Math.random()
               "firstname": firstname.value,
             "lastname": lastname.value,
             "email": email.value,
@@ -168,48 +168,40 @@
          {
            localStorage.setItem("registeredUsers", JSON.stringify([finalResult]))
         }
-        alert('registration successful');
-        window.open("login.html");
-        location.reload();
+
+        document.getElementById("hide").style.display = "none";
+        document.getElementById("check").style.display= "block";
+        // location.reload(3000);
+        
     }
 
 }
-
+ refresh=()=>
+    { 
+        window.open("login.html");
+    }
     
 
-    
+    show = () =>
+    {
+    var input = document.getElementById("password")
+     if (input.type === "password") 
+     {
+        input.type = "text";
+        document.getElementById("sow").style.display="block";
+        document.getElementById("show").style.display="none";
+     }
+     else
+      {
+        input.type = "password";
+        document.getElementById("show").style.display="block";
 
+        document.getElementById("sow").style.display="none";
+       
+     }
+
+    }
 </script>
-
-
 
 </body>
 </html>
-
-
-
-    <!-- Jquery JS-->
-
-    <script src="vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="vendor/slick/slick.min.js">
-    </script>
-    <script src="vendor/wow/wow.min.js"></script>
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
-
-    <!-- Main JS-->
-    <!-- <script src="js/main.js"></script> -->
-    

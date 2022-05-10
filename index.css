@@ -1,85 +1,175 @@
-body{
-  font-family: candara;
+body
+{
   margin: 0;
   padding: 0;
+  font-family: candara;
 }
-.navbar{
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: .9rem;
-  width: 95%;
-  letter-spacing: .1rem;
-  padding: 1.4em;
-  box-shadow: 4px 6px 8px 4px rgba(0, 0, 0, 0.5);
-  margin: 2em;
-  z-index: 1;
-}
-
-.navbar-brand{
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  content: "";
-  margin-left: -150px;
-  text-align: center;
-}
-
-.navbar-brand img{
-  width: 100px;
-  height: 100px;
-  border-radius: 80%;
-  margin-top: 6px;
-  margin-left: -1.5em;
-  box-shadow: 0px 0px 2px #5f5f5f,
-  0px 0px 0px 5px #ecf0f3;
-}
-
-.navbar-nav li{
-  padding-right: .7rem; 
-  color: white;
-}
-.navbar-dark .navbar-nav .nav-link{
-  color: white;
-  padding-top: .7rem;
-}
-
- .navbar-dark .navbar-nav .nav-link:hover{
-  color: white;
-  border-radius: 2px;
-  background: orangered
-}
-
-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/9.jpg);
+ header 
+{
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(images/83.jpg);
   background-size: cover;
-  background-position: 100% bottom 100%;
+  background-position: center;
   background-attachment: fixed;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
   overflow: hidden;
   background-repeat: no-repeat;
-  height: 100vh;
-  margin-top: -9em;
+  height: 100%;
+}
+
+header .col-md-8 .card 
+{
+  border:  none;
+}
+
+header .col-md-8 .card img
+{
+  height: 270px;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+header  .change
+{
+  animation: change 15s infinite;
+  height: 100%;
   }
 
+@keyframes change{
+0%
+{
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/92.jpg);
+  background-size: cover;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2em;
+  height: 550px;
+}
+
+50%
+{
+  background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/84.jpg);
+  background-size: cover;
+  width: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  padding: 2em;
+  height: 550px;
+}
+
+75%
+{
+  background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/71.jpg);
+  background-size: cover;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2em;
+  height: 550px;
+}
+
+100%
+{
+  background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/87.jpg);
+  background-size: cover;
+  width: 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding: 2em;
+  height: 550px;
+  }
+}
+
+header .col-md-8 .card .details
+{
+ position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: 0.3s ease;
+}
+
+header .col-md-8 .card:hover .details{
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: 1s;
+}
+
+header .col-md-8 .card .details h3
+{
+  display: none;
+}
+
+header .col-md-8 .card .details:hover h3
+{
+  color: white;
+  text-align: center;
+  top: 8em;
+  position: relative;
+  display: block;
+  font-family: candara;
+  transition: 1s;
+}
+header .navbar{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .9rem;
+  width: 100%;
+  letter-spacing: .1rem;
+  padding: 1.4em;
+  box-shadow: 4px 6px 8px 4px rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  transition: 1s;
+  position: fixed;
+}
+header .navbar:hover
+{
+  background: white;
+}
+
+.navbar-brand
+{
+
+  position: absolute;
+  left: 44%;
+  top: 0;
+  content: "";
+}
+header .navbar-nav .active
+{
+  border-bottom: 2px solid black;
+}
+
+header .navbar-nav .nav-link{
+  color: black !important;
+  padding-top: .7rem;
+}
+
+header .navbar-nav .nav-link:hover{
+  border-radius: 2px;
+  transition: 0.5s;
+  border-top: 2px solid teal;
+
+}
 .caption{
   width: 100%;
   position: absolute;
   top: 30%;
   z-index: 1;
-  justify-content: center;
-  overflow: hidden;
  } 
 
-.caption h1{
+.caption h1, p
+{
   padding: 1em;
-  font-size: 3.5em;
+  /*font-size: 3.5em;*/
   letter-spacing: .2.8rem;
   font-family: candara;
-  color: white;
+  /*color: white;*/
 }
 
 .container-fluid h1
@@ -89,7 +179,7 @@ header {
 
 .container-fluid h1 span
 {
-  color: orangered;
+  color: teal;
   font-weight: 700;
   font-size: 40px
 
@@ -98,7 +188,7 @@ header {
 .container-fluid .underline
 {
   height: 2px;
-  background: orangered;
+  background: teal;
   width: 8%;
   place-items: center;
   margin: auto;
@@ -117,7 +207,7 @@ header {
   transition: 1s ease
 }
 
-.container-fluid .col-lg-3 img
+.container-fluid .col-lg-3 img,embed
 {
   height: 35vh;
 }
@@ -139,60 +229,12 @@ header {
 .container-fluid .col-lg-3 .card button:hover
 {
   transition: 2s ease;
-  background: orangered;
+  background: teal;
   color: white;
   border: none;
 }
 
-.change{
-  animation: change 15s infinite;
-  /*margin-top: -2em;*/
-  /*text-transform: uppercase;
-  text-shadow: 2px 2px 4px #000000 ! important;*/
-  }
 
-  @keyframes change{
-    0%
-    {
-      background: url(images/30.png);
-      background-size: contain;
-      width: 100%;
-      background-position: center;
-      height: 80vh;
-      background-repeat: no-repeat;
-      padding: 2em;
-    }
-    50%
-    {
-      background: url(images/23.png);
-      background-size: contain;
-      width: 100%;
-      background-position: center;
-      height: 80vh;
-      background-repeat: no-repeat;
-      padding: 2em;
-    }
-    75%
-    {
-      background: url(images/25.jpg);
-      background-size: contain;
-      width: 100%;
-      background-position: center;
-      height: 80vh;
-      background-repeat: no-repeat;
-      padding: 2em;
-    }
-    100%
-    {
-      background: url(images/28.jpg);
-      background-size: contain;
-      width: 100%;
-      background-position: center;
-      height: 80vh;
-      background-repeat: no-repeat;
-      padding: 2em;
-    }
-  }
 
   .containers
   {
@@ -214,7 +256,7 @@ header {
   height: 610px;
   background: orange;
   border: 10px;
-  box-shadow: 2px 10px 12px rgba(0, 0, 0,0.5);
+  box-shadow: 2px 10px 12px rgba(0, 0, 0,0.7);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -268,8 +310,242 @@ header {
 .boxer:hover .marvel
 {
   color: blue;
-  transition: all ease 0.5s;
+  transition: all ease 0.7s;
 }
+
+.container .underline
+{
+  height: 2px;
+  background: teal;
+  width: 8%;
+  place-items: center;
+  margin: auto;
+}
+
+.container h2 span
+{
+  color: teal;
+  font-weight: 700;
+  font-size: 40px
+
+}
+
+ .Box
+{
+  /*height: 210px;*/
+  box-shadow: 2px 1px 2px 1px,
+            -2px -1px 2px 1px;
+}
+
+ .Box img
+{
+  height: 190px;
+}
+
+.first:hover
+{
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(images/67.jpg);
+  background-position: bottom 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+   transform: scale(1.3);
+  transition: 1s ease;
+  z-index: 1;
+  color: white;
+  box-shadow: 2px 1px 2px 1px transparent,
+            -2px -1px 2px 1px transparent;
+}
+
+.second:hover
+{
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(images/89.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+   transform: scale(1.3);
+  transition: 1s ease;
+  z-index: 1;
+  color: white;
+  box-shadow: 2px 1px 2px 1px transparent,
+              -2px -1px 2px 1px transparent;
+
+}
+.Box .second .col-md-6:hover
+{
+  color:  red;
+}
+
+.third:hover
+{
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(images/65.jpg);
+  background-position: bottom 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+   transform: scale(1.3);
+  transition: 1s ease;
+  z-index: 1;
+  color: white;
+  box-shadow: 2px 1px 2px 1px transparent,
+            -2px -1px 2px 1px transparent;
+}
+
+
+.four:hover
+{
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(images/30.jpg);
+  background-position: bottom 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+   transform: scale(1.3);
+  transition: 1s ease;
+  z-index: 1;
+  color: white;
+  box-shadow: 2px 1px 2px 1px transparent,
+            -2px -1px 2px 1px transparent;
+}
+
+
+.five:hover
+{
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(images/90.jpg);
+  background-position: bottom 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+   transform: scale(1.3);
+  transition: 1s ease;
+  z-index: 1;
+  color: white;
+  box-shadow: 2px 1px 2px 1px transparent,
+            -2px -1px 2px 1px transparent;
+}
+
+.six:hover
+{
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(images/72.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scale(1.3);
+  transition: 1s ease;
+  z-index: 1;
+  color: white;
+  box-shadow: 2px 1px 2px 1px transparent,
+            -2px -1px 2px 1px transparent;
+}
+
+.Message
+{
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(images/98.jpg);
+  background-position:100%  center 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 50vh;
+}
+
+.Message p
+{
+  color: white;
+  transition: 1s ease;
+}
+
+.Features
+{
+  background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(images/98.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center left;
+  background-attachment: fixed;
+  height: 40vh;
+}
+.Features .row .fa, .fab
+{
+  margin: auto;
+  place-items:  center;
+  display: grid;
+  color: white;
+  width: 20%;
+}
+
+.Features .row .content
+{
+  text-align: center;
+  color: white;
+
+}
+
+ .push
+{
+  /*color: red;*/
+   animation: push 5s infinite;
+}
+
+@keyframes push
+{
+  0%
+  {
+    transform: scale3d(1.5, 1.0, 1.5);
+  }
+
+  50%
+  {
+    transform: rotateY(45deg);
+  }
+
+  75%
+  {
+    transform: rotateX(45deg);
+  }
+
+   100%
+  {
+    transform: skewY(15deg);
+  }
+}
+
+.pull
+{
+  /*color: red;*/
+   animation: pull 5s infinite;
+}
+
+@keyframes pull
+{
+  0%
+  {
+    transform: scaleZ(4.0);
+  }
+
+  50%
+  {
+    transform: rotate3d(0, 0, 1, 45deg);
+  }
+
+   75%
+  {
+    transform: rotateY(45deg);
+  }
+
+   100%
+  {
+    transform: skewY(15deg);
+  }
+}
+
+@media screen and (max-width: 991px)
+{
+  .Features{
+    height: 100% !important;
+  }
+}
+
+/*@media (max-width: 991px)
+{
+    .Features{
+        height: 100% !important;
+    }
+}*/
+
 
 
 

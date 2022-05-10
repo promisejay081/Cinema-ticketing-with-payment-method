@@ -10,32 +10,10 @@
     <!-- Title Page-->
     <title>Cinema</title>
 
-    <!-- Fontfaces CSS-->
-    <link href="css/font-face.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/daa33ecf5c.js" crossorigin="anonymous"></script>
 
-    <!-- Bootstrap CSS-->
-    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-
-    <!-- Vendor CSS-->
-    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-    <link rel="stylesheet" type="text/css" href="wowjs/css/libs/animate.css">
     <link rel="stylesheet" type="text/css" href="dashboard.css">
-
-
-
-
-    <!-- Main CSS-->
-    <link href="css/theme.css" rel="stylesheet" media="all">
-    <script type="text/javascript" src="wowjs/wow.min.js"></script>
 
     <style>
       .card
@@ -88,6 +66,12 @@
           box-shadow: none;
           border-bottom: 1px solid black;
         }
+         @media (max-width: 991px)
+            {
+                .card{
+                    width: 100% !important;
+                }
+            }
     </style>
 
 
@@ -127,6 +111,10 @@
 
       <li>
         <a href="hall.html"><i class="fa fa-home"></i>Check Hall</a>
+      </li>
+
+        <li>
+        <a href="shall.html"><i class="fa fa-home"></i>Check Vip Hall</a>
       </li>
 
        <li>
@@ -197,6 +185,7 @@
     <div class="container my-5">
         <div class="card">
           <h3 class="card-header">Arrange Hall</h3>
+          <p id="message" class="text-danger text-center"></p>
           <div class="card-body">
               <div class="row">
                 <div class="col-lg-6">
@@ -229,32 +218,6 @@
   </body>
 </html>
 
-
-
-    <!-- Jquery JS-->
-
-    <script src="vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="vendor/slick/slick.min.js">
-    </script>
-    <script src="vendor/wow/wow.min.js"></script>
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
-
-    <!-- Main JS-->
-    <script src="js/main.js"></script>
     <script>
        
 
@@ -262,31 +225,17 @@
         {
           let c = [];
           let ch = { 
-           fv :nc.value,
-            sv : npr.value   
-          }
+           "fv" :nc.value,
+            "sv" : npr.value   
+          };
            
           
           c.push(ch);
-             datas = localStorage.chair = JSON.stringify(ch);
+          window.localStorage.chair = JSON.stringify(ch);
+          message.innerHTML="Chairs Arrange was Successful";
+             // datas = localStorage.chair = JSON.stringify(ch);
           }
            
-          // let newData = [...datas, ch];
-            // localStorage.setItem("chair", JSON.stringify(newData))
-      //     let count = '';
-
-      // if (window.localStorage.chairs) 
-      // {
-      //   jUser = window.localStorage.getItem("chairs");
-      //   cus = JSON.parse(jUser);
-      //   for (i=0; i<cus.length; i++) {
-      //   count += '<td><img src="../images/21.jfif" alt="" width="200" height="250"></td>'+cus[i].ca+"</td></tr>"
-      //       // b += "<tr id='index'><td>"+i+"</td><td>"+cus[i].ca+"</td></tr>";
-      //     }
-      //       count.innerHTML = count;
-
-      //   }
-            // +customers[i].firstname+"</td><td>"
       
         
     </script>

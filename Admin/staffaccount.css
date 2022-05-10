@@ -296,6 +296,12 @@ a:focus {
   #wrapper {
     padding-left: 250px;
   }
+
+   .card 
+  {
+    width: 100%;
+    box-shadow: 1px 2px 1px 2px;
+  }
   
   #wrapper.toggled {
     padding-left: 60px;
@@ -347,6 +353,11 @@ a:focus {
   #sidebar-wrapper {
     width: 60px;
   }
+  .card 
+  {
+    width: 100%;
+    box-shadow: 1px 2px 1px 2px;
+  }
   
 #wrapper.toggled #navbar-wrapper {
     position: absolute;
@@ -379,6 +390,11 @@ a:focus {
 }
 
 @media (max-width: 767px) {
+  .card 
+{
+  width: 100%;
+  box-shadow: 1px 2px 1px 2px;
+}
   #wrapper {
     padding-left: 0;
   }
@@ -421,11 +437,7 @@ a:focus {
 }
 .card 
 {
- /*background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(../images/sk.png);
-  background-size: 100% top;
-  background-position: bottom;
-  background-repeat: no-repeat;*/
-  width: 70%;
+  width: 80%;
   box-shadow: 1px 2px 1px 2px;
 }
 
@@ -449,8 +461,7 @@ a:focus {
 	color: black;
 	outline: none;
   padding: 8px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+border-radius: 0;
 }
 /*.card .row .col-lg-2
 {

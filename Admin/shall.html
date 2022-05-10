@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Home</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/daa33ecf5c.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="dashboard.css">
+
+    <style>
+        body
+        {
+            background: url(../images/52.jfif);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        .card
+        {
+            background: transparent;
+            border: none;
+        }
+        .btn-success
+        {
+            color: white;
+            margin: auto;
+            display: grid;
+            place-items: center;
+        }
+    </style>
+
+</head>
+<body onload="arranger()">
+    <div id="wrapper">
+
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <img src="../images/sk.png" class="my-1" align="center">
+    </div>
+
+    <ul class="sidebar-nav">
+      <li>
+        <a href="dashboard.html"><i class="fa fa-tachometer-alt"></i>Dashboard</a>
+      </li>
+
+      <li>
+        <a href="staffaccount.html"><i class="fa fa-user-plus"></i>Add Staffs</a>
+      </li>
+
+       <li>
+        <a href="staffdetails.html"><i class="fa fa-info-circle"></i>Staffs Details</a>
+      </li>
+
+      <li>
+        <a href="customerdetails.html"><i class="fa fa-users"></i>Customers Details</a>
+      </li>
+
+      <li>
+        <a href="show.html"><i class="fa fa-sort"></i>Arrange Chairs</a>
+      </li>
+
+      <li class="active">
+        <a href="hall.html"><i class="fa fa-home"></i>Check Hall</a>
+      </li>
+
+       <li>
+        <a href="shall.html"><i class="fa fa-home"></i>Check Vip Hall</a>
+      </li>
+
+       <li>
+        <a href="show.html"><i class="fa fa-sort"></i>Chairs book per-day</a>
+      </li>
+
+       <li>
+        <a href="show.html"><i class="fa fa-sort"></i>Payment per Day</a>
+      </li>
+
+      <li>
+        <a href="#"><i class="fa fa-user"></i>Profile</a>
+      </li>
+       <li>
+        <a href="logout.php"><i class="fa fa-power-off"></i>Logout</a>
+      </li>
+    </ul>
+
+    <ul class="social p-2 m-3">
+      <li class="list-group">
+        <i class="fab fa-facebook p-1" style="background-color: blue; color: white; width: 30px"></i>
+      </li>
+
+      <li class="list-group">
+        <i class="fab fa-twitter p-1" style="color: #4EC5EF; width: 30px"></i>
+      </li>
+
+      <li class="list-group">
+        <i class="fab fa-whatsapp p-1" style="background-color: green; color: white; width: 30px"></i>
+      </li>
+
+      <li class="list-group p-1" style="width: 30px; color: #4EC5EF">
+        <i class="fab fa-instagram"></i>
+      </li>
+
+    </ul>
+  </aside>
+
+  <div id="navbar-wrapper">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid ">
+        <div class="navbar-header" style="display: inline-flex;">
+          <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>
+                <h2 class=" p-2 change">FEMZY B</h2>
+        </div>
+
+       <!-- <form class="d-none d-sm-inline-block">
+          <input class="form-control form-control-lite ml-5" type="text" placeholder="Search projects...">
+        </form> -->
+
+        <div class="ml-auto p-2" style="display: flex">
+           <i class="fa fa-bell" style="color: black"></i>
+           <span class="bg-danger" style="top: -0.7em;position: relative;border-radius: 100%;height: 23px;width: 23px;padding-left: 5px;right: 5px">
+            <h4 class="text-light" style="font-size: 200">3</h4>
+          </span>
+
+          <i class="fa fa-envelope" style="color: black"></i>
+           <span class="bg-danger" style="top: -0.7em;position: relative;border-radius: 100%;height: 23px;width: 23px;padding-left: 5px;right: 5px">
+            <h4 class="text-light" style="font-size: 200">5</h4>
+          </span>
+        </div>
+
+
+        <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <img src="../images/4.jpg"  class="rounded-circle" style="height: 50px; width: 50px">
+          <span style="font-size: 18px;color: black">Joe Don </span>
+      </li>   
+    </ul>
+  </div>
+
+    </nav>
+  </div>
+  <section id="content-wrapper">
+    <div class="container">
+        <input type=""id="nc" name="" style="display:none;">
+        <input type="" id="npr" name="" style="display:none">
+
+        <div class="card w-50" style=" box-shadow: 1px 2px 3px 2px;">
+            <h3 class="card-header text-light">Selected Chairs Details</h3>
+            <div class="card-body">
+                <div class="row">  
+                    <div class="col-lg-6">    
+                        <input type="text" name="" placeholder="Total" class="form-control" id="p1">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <input type="text" name="" placeholder="Search for Number of chair" class="form-control search">
+                    </div>
+                </div>
+            <a href="payment.html">
+                <button class="btn btn-primary my-2">Proceed To Book Sit</button>
+            </a>
+            </div>
+        </div>
+
+    
+        <table id="hall"></table>
+        
+
+    </div>
+</section>
+ 
+
+</body>
+</html>
+
+<script>  
+       arranger=()=> 
+        {
+          var char =JSON.parse(window.localStorage.getItem("chair")) ;
+          nc.value = char.fv
+          npr.value=char.sv
+
+
+           var chair ='';
+            noOfChair = nc.value;
+            noPerRow = npr.value;
+            cArranged = 0;
+
+            chair = '<tr>'
+            for (let x = 0; x < noOfChair; x++) {
+                chair += `<td> 
+                <img src="../images/60.png" alt="" width="200" height="250" class="card" onclick="put(${x})" id="image">
+                <button class="btn btn-success" id="sit" onclick="show(${x}, this)">SEAT ${x+1}</button>
+                </td>`;
+                cArranged++;
+                if (cArranged == noPerRow) {
+                    chair += '</tr><tr>';
+                    cArranged = 0;
+                }
+            }
+            chair += '</tr>';
+            document.getElementById("hall").innerHTML = chair;
+        }
+            
+        show=(x, element)=>
+        {
+         value =x;
+        var sit = 3000;
+         p1.value = Number(p1.value)+Number(sit);
+         $(element).prop('disabled', true);
+            // ().fadeOut(2000);
+          
+        }
+       pay=()=>
+       {
+        if (p1.value == "") 
+        {
+            // alert("nhhd");
+            message.innerHTML = "Kindly book seat before you can proceed";
+        }
+        else
+        {
+         let pay = [];
+         let money = { 
+           "amount" :p1.value,  
+          };
+           pay.push(money);
+           window.localStorage.Pay = JSON.stringify(money);
+           location.replace("payment.html")
+          
+       }
+   }
+        // sub=()=>
+        // {
+        //   let c = [];
+        //   let ch = { 
+        //    "fv" :nc.value,
+        //     "sv" : npr.value   
+        //   };
+           
+          
+        //   c.push(ch);
+        //   window.localStorage.chair = JSON.stringify(ch)
+        //      // datas = localStorage.chair = JSON.stringify(ch);
+        //   }
+
+        // put=(x)=>
+        // {
+        // var sit = 1000;
+
+        //     // alert(x+1);
+        //     p1.value = Number(p1.value)+Number(sit);
+        //     // document.getElementById     
+        // }
+
+    $(document).ready(function(){
+    $(".search").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#l button").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>

@@ -9,87 +9,130 @@
 
     <!-- Title Page-->
     <title>Cinema</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <!-- Fontfaces CSS-->
-    <link href="css/font-face.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
-    <!-- Bootstrap CSS-->
-    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
-    <!-- Vendor CSS-->
-    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-    <link rel="stylesheet" type="text/css" href="wowjs/css/libs/animate.css">
-        <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
+    <script src="https://kit.fontawesome.com/daa33ecf5c.js" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" type="text/css" href="index.css">
 
-
-
-    <!-- Main CSS-->
-    <link href="css/theme.css" rel="stylesheet" media="all">
-    <script type="text/javascript" src="wowjs/wow.min.js"></script>
-
-
-    <script>
-        new WOW().init();
-    </script>
-
-</head>
+    </head>
     <body>
-        <nav class="navbar navbar-expand-md  navbar-dark">
-  <a class="navbar-brand" href="#">
-    <img src="images/sk.png">
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar" style="background: transparent;">
-    <ul class="nav navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.php">About Us</a>
-      </li>
-  </ul>
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="Customers/login.html">Sign In</a>
-      </li>
-
-     <!--  <li class="nav-item">
-        <a class="nav-link" href="Staffs/login.html">Staff Sign In</a>
-      </li>  -->
-
-      <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Staff Sign
+    <header>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="images/log.png" style="height: 80px;" class="ml-3">
       </a>
-      <div class="dropdown-menu bg-dark p-0">
-        <a class="nav-link" href="Staffs/login.html">Staff Sign In</a>
-        <a class="nav-link" href="Customers/login.html">Admin Sign In</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="nav navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.php">About Us</a>
+          </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto">
+     
+          <li class="nav-item">
+            <a class="nav-link" href="Customers/login.html">Sign In</a>
+          </li>
+
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Staff Sign In
+          </a>
+          <div class="dropdown-menu bg-dark p-0">
+            <a class="nav-link" href="Staffs/login.html">Staff Sign In</a>
+            <a class="nav-link" href="Customers/login.html">Admin Sign In</a>
+          </div>
+        </li>
+        </ul>
       </div>
-    </li>
-    </ul>
-  </div>  
-</nav>
- 
-<header></header>
+    </nav>
+
+    <div class="row my-5 py-5">
+        <div class="col-md-4">
+            <div class="card change"></div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-4 push">
+                    <div class="card">
+                        <img src="images/64.jpg">
+                        <div class="details">
+                            <h3>FIRESTARTER</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card push">
+                        <img src="images/68.jpg">
+                        <div class="details">
+                            <h3>ROBOCOP</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card push">
+                        <img src="images/81.jpg">
+                        <div class="details">
+                            <h3>The Monkey King Reborn</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card pull">
+                        <img src="images/70.jpg">
+                        <div class="details">
+                            <h3>DEAD POOL</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card pull">
+                        <img src="images/91.jpg">
+                        <div class="details">
+                            <h3>SKYSCRAPER</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card pull">
+                        <img src="images/79.jpg">
+                        <div class="details">
+                            <h3>The PREDATOR</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
 
  <div class="container-fluid caption">
-         <h1 class="text-center wow fadeInLeft" data-wow-duration="3s">
+         <h1 class="wow fadeInLeft text-light" data-wow-duration="3s">
             Welcome To<br> <strong style="color: orangered;font-weight: 700">FEMZY B</strong> <br>Cinema Show
         </h1>    
-        <p class="text-center text-light  wow fadeInLeft" data-wow-duration="3s">
+        <p class="text-light  wow fadeInLeft" data-wow-duration="3s">
          The Best Cinema show that will always<br> show you the best movies
         </p>
  </div>
@@ -100,56 +143,53 @@
     <br>
      <div class="row my-3">
          <div class="col-lg-3">
-             <div class="card">
+             <div class="card mb-3">
                  <img src="images/2.png" class="card-image">
                     <div class="card-body">
                         <p class="text-center text-dark">The Flash season 8</p>
-                        <br>
-                        <button class="btn btn-xl ">Watch Now</button>
+                        <button class="btn btn-dark">Watch Triller</button>
                     </div>
              </div>
          </div>
 
          <div class="col-lg-3">
-             <div class="card">
-                 <img src="images/23.jpg">
+             <div class="card mb-3">
+                <embed style="display: none;" id="show" src="Videos/2.mp4"></embed>
+                 <img src="images/23.jpg" id="watch">
                     <div class="card-body">
-                        <p class="text-center text-dark">The Amazing Spider-Man</p>
-                        <br>
-                        <button class="btn btn-dark">Watch Now</button>
+                        <p class="text-center text-dark">Venom 2</p>
+                    <button class="btn btn-dark" onclick="watch('1')">Watch Triller</button>
                     </div>
              </div>
          </div>
 
          <div class="col-lg-3">
-             <div class="card">
-                 <img src="images/4.jpg">
+             <div class="card mb-3">
+                <embed style="display: none;" id="show2" src="Videos/1.mp4"></embed>
+                 <img src="images/4.jpg" id="watch2">
                     <div class="card-body">
                         <p class="text-center text-dark">Spider-Man NO Way Home</p>
-                        <br>
-                        <button class="btn btn-xl ">Watch Now</button>
+                        <button class="btn btn-dark" onclick="watch('2')">Watch Triller</button>
                     </div>
              </div>
          </div>
 
          <div class="col-lg-3">
-             <div class="card">
+             <div class="card mb-3">
                  <img src="images/5.jpg">
                      <div class="card-body">
                         <p class="text-center text-dark">A Madagascar Little Wild</p>
-                        <br>
-                        <button class="btn btn-xl ">Watch Now</button>
+                        <button class="btn btn-dark">Watch Triller</button>
                     </div>
              </div>
          </div>
 
          <div class="col-lg-3">
-             <div class="card">
+             <div class="card mb-3">
                  <img src="images/6.jpg">
                     <div class="card-body">
                         <p class="text-center text-dark">The Batwoman</p>
-                        <br>
-                        <button class="btn btn-xl ">Watch Now</button>
+                        <button class="btn btn-dark">Watch Triller</button>
                     </div>
              </div>
          </div>
@@ -159,126 +199,236 @@
                  <img src="images/28.jpg">
                     <div class="card-body">
                         <p class="text-center text-dark">Guardian of The Galaxy</p>
-                        <br>
-                        <button class="btn btn-xl ">Watch Now</button>
+                        <button class="btn btn-dark">Watch Triller</button>
                     </div>
              </div>
          </div>
 
          <div class="col-lg-3">
-             <div class="card">
+             <div class="card mb-3">
                  <img src="images/13.jpg">
                     <div class="card-body">
                         <p class="text-center text-dark">Cult of Chucky</p>
-                        <br>
-                        <button class="btn btn-xl ">Watch Now</button>
+                        <button class="btn btn-dark">Watch Triller</button>
                     </div>
              </div>
          </div>
 
          <div class="col-lg-3">
-             <div class="card">
+             <div class="card mb-3">
                  <img src="images/22.jpg">
                     <div class="card-body">
                         <p class="text-center text-dark">APEX</p>
-                        <br>
-                        <button class="btn btn-xl ">Watch Now</button>
+                        <button class="btn btn-dark">Watch Triller</button>
                     </div>
              </div>
          </div>
      </div>
  </div>
-<div class="container p-5">
-    <!-- <div class="row"> -->
-        <!-- div class="col-lg-6">
-            
-        </div> -->
 
-        <div class=" change">
+<div class="container-fluid p-5 mb-5 Features">
+    <div class="row">
+        <div class="col-md-3">
+            <i  class="fa fa-video-camera fa-4x push"></i>
+            <div class="content">
+                <p>Best Cinema Show</p>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <i  class="fa fa-check-circle fa-4x pull"></i>
+            <div class="content">
+                <p>Trust</p>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <i  class="fa fa-thumbs-up fa-4x push"></i>
+            <div class="content">
+               <p>Making Our Customer Comfortable</p>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <i  class="fab fa-cc-visa fa-4x pull"></i>
+            <div class="content">
+               <p> Payment is easy and reliable</p>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="text-center"><span>N</span>ow <span>S</span>howing</h2>
+    <div class="underline"></div>
+    <br>
+    <div class="row my-3 p-3">
+        <div class="col-md-3">
+            <p class="text-dark my-5" id="disp">
+                
+            </p>
+        </div>
+
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card Box p-2 first mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="images/67.jpg" class="card-img-top w-100">
+                            </div>
+
+                            <div class="col-md-6">
+                            <!-- <div class="card-body"> -->
+                                <h4 class="card-title">Monday</h4>
+                                <p class="card-text">Time: 7pm</p>
+                                <p class="card-text"><b>Title:</b> Blacklighting</p>
+                            <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col-md-4">
+                    <div class="card Box p-2 second mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="images/89.jpg" class="card-img-top">
+                            </div>
+
+                            <div class="col-md-6">
+                            <!-- <div class="card-body"> -->
+                            <h4 class="card-title">Tuesday</h4>
+                            <p class="card-text">Time: 7pm</p>
+                            <p class="card-text"><b><b>Title:</b></b> Skyscraper</p>
+                            <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card Box p-2 third mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                             <img src="images/65.jpg" class="card-img-top">
+                            </div>
+
+                            <div class="col-md-6">
+                            <!-- <div class="card-body"> -->
+                            <h4 class="card-title">Wednesday</h4>
+                            <p class="card-text"><b>Time:</b> 7pm</p>
+                            <p class="card-text"><b>Title:</b> Red Notice</p>                         
+                             <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col-md-4">
+                    <div class="card Box p-2 four mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="images/30.jpg" class="card-img-top">
+                            </div>
+
+                            <div class="col-md-6">
+                            <!-- <div class="card-body"> -->
+                           <h4 class="card-title">Thursday</h4>
+                            <p class="card-text">Time: 7pm</p>
+                            <p class="card-text"><b>Title:</b> Shang-Chi</p>                        
+                             <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card Box p-2 five mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="images/90.jpg" class="card-img-top">
+                            </div>
+
+                            <div class="col-md-6">
+                            <!-- <div class="card-body"> -->
+                           <h4 class="card-title">Friday</h4>
+                            <p class="card-text">Time: 7pm</p>
+                            <p class="card-text"><b>Title:</b> Justice League</p>                        
+                             <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+
+                <div class="col-md-4">
+                    <div class="card Box p-2 six mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="images/72.jpg" class="card-img-top">
+                            </div>
+
+                            <div class="col-md-6">
+                            <!-- <div class="card-body"> -->
+                            <h4 class="card-title">Sunday</h4>
+                            <p class="card-text">Time: 7pm</p>
+                            <p class="card-text"><b>Title:</b> Ghostbuster After Life</p>                       
+                             <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+
+            </div>
+        </div>
+
+       </div> 
+    </div>
+
+
+<div class="container-fluid p-5 mb-5 Message">
+    <div class="row">
+       
+
+        <div class="col-md-6">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+        </div>
+
+         <div class="col-md-6">
             
         </div>
-        
-    <!-- </div> -->
+    </div>
 </div>
-<!--  <div class="container-fluid">
-     <video autoplay loop>
-         <source src="images/vv.mp4" type="">
-     </video>
- </div> -->
 
-<!--  <div class="containers">
-    <ul id="autoWidth" class="cs-hidden">
-        <li class="item-a">
-        <div  class="box">
-         <p class="marvel"></p>
-         <img src="images/20.jpg" class="model">
-         <div class="details">
-             <img src="images/3.jpg" class="logo" style="width: 100px; list-style-type: height:  auto;">
-             <p>lvh klxcb cxhcbfbfbsvjsbbvskbvsbvskdhvskvdsvhdsbdbds</p>
-         </div>
-     </div>
-     </li>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            
+        </div>
 
-        <li class="item-a">
-        <div  class="box">
-         <p class="marvel"></p>
-         <img src="images/20.jpg" class="model">
-         <div class="details">
-             <img src="images/3.jpg" class="logo" style="width: 100px; list-style-type: height:  auto;">
-             <p>lvh klxcb cxhcbfbfbsvjsbbvskbvsbvskdhvskvdsvhdsbdbds</p>
-         </div>
-     </div>
-     </li>
+        <div class="col-md-6">
+            <h3>Contact Us</h3>
 
-        <li class="item-a">
-        <div  class="box">
-         <p class="marvel"></p>
-         <img src="images/20.jpg" class="model">
-         <div class="details">
-             <img src="images/3.jpg" class="logo" style="width: 100px; list-style-type: height:  auto;">
-             <p>lvh klxcb cxhcbfbfbsvjsbbvskbvsbvskdhvskvdsvhdsbdbds</p>
-         </div>
-     </div>
-     </li>
+            <div class="mb-3">
+                <input type="text" name=""  placeholder="Fullname" class="form-control">
+            </div>
 
-        <li class="item-a">
-        <div  class="box">
-         <p class="marvel"></p>
-         <img src="images/20.jpg" class="model">
-         <div class="details">
-             <img src="images/3.jpg" class="logo" style="width: 100px; list-style-type: height:  auto;">
-             <p>lvh klxcb cxhcbfbfbsvjsbbvskbvsbvskdhvskvdsvhdsbdbds</p>
-         </div>
-     </div>
-     </li>
+            <div class="mb-3">
+                <input type="text" name=""  placeholder="Phone Number" class="form-control">
+            </div>
 
-        <li class="item-a">
-        <div  class="box">
-         <p class="marvel"></p>
-         <img src="images/20.jpg" class="model">
-         <div class="details">
-             <img src="images/3.jpg" class="logo" style="width: 100px; list-style-type: height:  auto;">
-             <p>lvh klxcb cxhcbfbfbsvjsbbvskbvsbvskdhvskvdsvhdsbdbds</p>
-         </div>
-     </div>
-     </li>
-
-       <li class="item-a">
-        <div  class="box">
-         <p class="marvel"></p>
-         <img src="images/20.jpg" class="model">
-         <div class="details">
-             <img src="images/3.jpg" class="logo" style="width: 100px; list-style-type: height:  auto;">
-             <p>lvh klxcb cxhcbfbfbsvjsbbvskbvsbvskdhvskvdsvhdsbdbds</p>
-         </div>
-     </div>
-     </li>
-    </ul>
-     
- </div>
- -->
-
-
+            <div class="mb-3">
+               <textarea class="form-control" placeholder="Message"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -287,46 +437,48 @@
     </body>
 </html>
 
-
-
-    <!-- Jquery JS-->
-
-    <script src="vendor/jquery-3.2.1.min.js"></script>
-
-    <script src="vendor/lightslider.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="vendor/slick/slick.min.js">
-    </script>
-    <script src="vendor/wow/wow.min.js"></script>
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
-
-    <!-- Main JS-->
-    <!-- <script src="js/main.js"></script> -->
-
-   <!--  <script>
-    $(document).ready(function()
-    {
-        $('#autoWidth').lightSlider({
-            autoWidth:true,
-            loop: true,
-            onSliderLoad: function()
-            {
-                $('#autoWidth').removeClass('cS-hidden')
+    <script>
+        watch = (x)=>
+        {
+            if (x == '1') 
+            {    
+                document.getElementById("watch").style.display="none";
+                document.getElementById("show").style.display="block";
             }
-        })
-    })
+            else if (x == '2')
+            {
+                document.getElementById("watch2").style.display="none";
+                document.getElementById("show2").style.display="block";
+                 document.getElementById("watch").style.display="block";
+                  document.getElementById("show").style.display="none";
+            }
+
+        }
+
+         document.addEventListener('DOMContentLoaded',animation,false);
+        var textArray = ["Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor "];
+        function animation(){
+          startAnim(0);
+        }
+        function effect(currentText,i,callback){
+          if(i<currentText.length){
+            document.getElementById("disp").innerHTML = currentText.substring(0,i+1)+"<span id='cursor'></span>";
+            setTimeout(function(){effect(currentText,i+1,callback)},50);
+          }else if(typeof callback == 'function'){
+            setTimeout(callback,700); 
+          }
+        }
+        function startAnim(i){
+          if(typeof textArray[i] == 'undefined'){
+            setTimeout(function(){startAnim(0)},10000);
+          }
+          if(i<textArray.length){
+            var currentText = textArray[i];
+            effect(currentText,0,function(){
+              startAnim(i+1);
+            });
+            //startAnim(i+1);
+            
+          }
+        }
     </script>
-    -->
